@@ -59,7 +59,7 @@ Umluft und optionaler Klimasteuerung.
 
 ### Substrat &amp; Gefäße
 
-Je nach Run arbeite ich mit 4 bis 6 Liter großen Vliestöpfen und
+Je nach Run arbeite ich mit 4 bis 6 Liter großen Vliestöpfen oder Kunststofftöpfen und
 torfbasierten Substraten.
 
 ### Elixiere &amp; Nährstoffe
