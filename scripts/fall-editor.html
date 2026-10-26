@@ -29,6 +29,7 @@
   .typ span { display:block; text-align:center; padding:.7rem; border:1px solid var(--gold-dim); border-radius:3px; font-family:"Cinzel",serif; text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; }
   .typ input:checked + span.f { background:var(--blood); border-color:var(--blood); color:#fff; }
   .typ input:checked + span.h { background:var(--potion); border-color:var(--potion); color:var(--ink); }
+  .typ input:checked + span.s { background:#e8c93a; border-color:#e8c93a; color:var(--ink); }
   .foto { display:grid; grid-template-columns: 1fr 2fr auto; gap:.6rem; margin-bottom:.5rem; align-items:center; }
   @media (max-width: 640px) { .foto { grid-template-columns: 1fr; } }
   button { background:transparent; color:var(--parch); border:1px solid var(--gold-dim); border-radius:3px; padding:.5rem 1rem; cursor:pointer; text-transform:uppercase; font-size:.75rem; }
@@ -52,6 +53,7 @@
   <div class="typ" role="radiogroup" aria-label="Art des Falls">
     <label><input type="radio" name="typ" value="fehler" checked><span class="f">Fehler</span></label>
     <label><input type="radio" name="typ" value="highlight"><span class="h">Highlight</span></label>
+    <label><input type="radio" name="typ" value="skurril"><span class="s">Skurril</span></label>
   </div>
 
   <label class="t" for="titel">Titel</label>
@@ -116,9 +118,14 @@ const ABSCHNITTE = {
     ["highlight", "Highlight",       "Was zeigt das Foto, was ist besonders?", false],
     ["dahinter",  "Was dahinter steckt", "Was hat dazu beigetragen (Genetik, Klima, Pflege)?", false],
     ["erkenntnis","Erkenntnis",      "Eine Zeile pro Punkt: was nimmst du mit?", true]
+  ],
+  skurril: [
+    ["skurril",   "Das Kuriosum",         "Was ist passiert, was ist daran ungewöhnlich?", false],
+    ["erklaerung","Mögliche Erklärung",   "Woran könnte es liegen (Genetik, Mutation, Umwelt)?", false],
+    ["erkenntnis","Was ich daraus mitnehme", "Eine Zeile pro Punkt.", true]
   ]
 };
-const BILD_PRAEFIX = { fehler: "Fehlerausprägung: ", highlight: "Highlight: " };
+const BILD_PRAEFIX = { fehler: "Fehlerausprägung: ", highlight: "Highlight: ", skurril: "Skurril: " };
 
 const $ = id => document.getElementById(id);
 const typ = () => document.querySelector('input[name="typ"]:checked').value;

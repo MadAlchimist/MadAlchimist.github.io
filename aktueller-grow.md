@@ -4,8 +4,24 @@ title: Aktueller Grow
 permalink: /aktueller-grow/
 ---
 
-Fotos und Verlaufsdaten des aktuellen Durchgangs, direkt aus Canalyze, meinem
-selbst gebauten Grow-Analyse-Tool (Access, SQL und Python).
+Der laufende Durchgang, direkt aus **Canalyze**, meinem selbst gebauten
+Grow-Analyse-Tool. Zu Beginn siehst du Klima und Fotos. Über die Ebenen lassen
+sich Gießen, Zusätze und Ereignisse dazuschalten, Pflanzen ein- und ausblenden
+und der Zeitraum eingrenzen.
 
-*(Platzhalter – die Anbindung ist noch nicht gebaut. Geplant: Canalyze
-exportiert nach `_data/`, diese Seite zeigt Verlauf und Auffälligkeiten.)*
+<div id="grow" data-basis="{{ '/assets/canalyze_export/' | relative_url }}">
+  <p class="grow-laden">Lade Daten aus Canalyze …</p>
+</div>
+
+<noscript><p>Für die interaktive Ansicht wird JavaScript benötigt.</p></noscript>
+
+<ul id="grow-fotos" hidden>
+{%- for f in site.static_files -%}
+  {%- if f.path contains '/assets/aktueller-grow/' and f.extname == '.jpg' -%}
+    {%- unless f.path contains '/thumbs/' -%}<li data-src="{{ f.path | relative_url }}"></li>{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+</ul>
+
+<script src="{{ '/assets/vendor/chart.umd.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/grow.js' | relative_url }}"></script>

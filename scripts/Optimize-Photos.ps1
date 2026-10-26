@@ -10,7 +10,8 @@ param(
   [Parameter(Mandatory)][string[]]$Source,   # Dateien und/oder Ordner
   [Parameter(Mandatory)][string]$Dest,       # Zielordner (wird angelegt)
   [int]$MaxEdge = 1600,                      # laengste Kante in px (Scans: 2400)
-  [int]$Quality = 82
+  [int]$Quality = 82,
+  [switch]$Thumbs                            # zusaetzlich kleine Vorschaubilder (480 px) in <Dest>\thumbs
 )
 Add-Type -AssemblyName System.Drawing
 
@@ -45,5 +46,19 @@ foreach ($f in $files) {
     $bmp.Save($out, $codec, $params)
     $bmp.Dispose()
     '{0} -> {1} ({2}x{3}, {4} KB)' -f $f.Name, $out, $w, $h, [int]((Get-Item $out).Length / 1KB)
+
+    if ($Thumbs) {
+      $tdir = Join-Path $Dest 'thumbs'
+      New-Item -ItemType Directory -Force $tdir | Out-Null
+      $ts = [math]::Min(1.0, 480 / [math]::Max($img.Width, $img.Height))
+      $tw = [int]($img.Width * $ts); $th = [int]($img.Height * $ts)
+      $tb = New-Object System.Drawing.Bitmap $tw, $th
+      $tg = [System.Drawing.Graphics]::FromImage($tb)
+      $tg.InterpolationMode = 'HighQualityBicubic'
+      $tg.DrawImage($img, 0, 0, $tw, $th)
+      $tg.Dispose()
+      $tb.Save((Join-Path $tdir ([IO.Path]::GetFileNameWithoutExtension($f.Name) + '.jpg')), $codec, $params)
+      $tb.Dispose()
+    }
   } finally { $img.Dispose() }
 }

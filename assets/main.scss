@@ -10,6 +10,7 @@ $gold:       #c9a24b;
 $gold-dim:   #7a6330;
 $potion:     #7ccf4f;
 $blood:      #c4513a;
+$skurril:    #e8c93a;   // Gelb fuer Skurriles
 $arcane:     #a06cff;   // Lila: Magie-Kontrast zu Gold und Gruen
 $arcane-lt:  #cdb0ff;
 $arcane-dp:  #3a1d6e;
@@ -87,15 +88,15 @@ ul { list-style: none; margin-left: 0; }
 .site-header .wrapper::after { display: none; } // minima-Clearfix wuerde sonst als Flex-Element mitzaehlen
 .site-title, .site-title:visited {
   display: inline-flex; align-items: center; gap: .6em; border: 0;
-  font-weight: 900; font-size: 1.3rem; letter-spacing: .06em; text-transform: none;
+  font-weight: 900; font-size: 1.2rem; letter-spacing: .05em; text-transform: none;
   color: $gold; line-height: 1; text-shadow: 0 0 18px rgba($gold, .25);
 }
 .site-title:hover { color: lighten($gold, 12%); text-shadow: 0 0 18px rgba($arcane, .55); }
 .logo { width: 38px; height: 38px; flex: none; filter: drop-shadow(0 0 7px rgba($potion, .5)) drop-shadow(0 0 10px rgba($arcane, .35)); }
 .site-nav { float: none; line-height: 1; }
 .site-nav .page-link {
-  margin-left: 1.4em; border: 0; color: $parchment; text-transform: uppercase;
-  font-size: .8rem; letter-spacing: .12em; padding-bottom: 4px;
+  margin-left: 1em; border: 0; color: $parchment; text-transform: uppercase;
+  font-size: .72rem; letter-spacing: .06em; padding-bottom: 4px; white-space: nowrap;
 }
 .site-nav .page-link:hover { color: $arcane-lt; border-bottom: 1px solid $arcane; }
 @media screen and (max-width: 600px) {
@@ -191,6 +192,7 @@ ul { list-style: none; margin-left: 0; }
 }
 .badge-fehler { background: $blood; color: #fff; }
 .badge-highlight { background: $potion; }
+.badge-skurril { background: $skurril; }
 
 .karten { list-style: none; margin: 1rem 0 2rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
 .karte { margin: 0; }
@@ -305,6 +307,65 @@ h2, h3 { scroll-margin-top: 1rem; }
 .chip.antag { color: #f0b3a5; border-color: rgba($blood, .8); background: rgba($blood, .12); }
 .chip.syn   { color: #c4efa7; border-color: rgba($potion, .75); background: rgba($potion, .1); }
 .chips .chiptitel + .chip { margin-left: 0; }
+
+// ---- Aktueller Grow (interaktive Ansicht, assets/js/grow.js) ---------------------------------------
+.grow-laden, .grow-fehler { color: $muted; font-style: italic; }
+.grow-fehler { color: #f0b3a5; }
+.grow-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .8rem; margin: 1.2rem 0; }
+.kpi { text-align: center; padding: .8rem 1rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .85); }
+.kpi-label { display: block; font-family: $f-head; font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: $muted; }
+.kpi strong { font-family: $f-display; font-weight: 900; font-size: 1.5rem; color: $gold; line-height: 1.3; }
+
+.grow-pult { padding: .8rem 1.2rem; margin-bottom: 1rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .8); }
+.pult-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .55rem 0; }
+.pult-titel { min-width: 5.4rem; font-family: $f-head; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: $gold; }
+.pult-ebenen { align-items: flex-start; }
+.ebene { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding: .15rem .2rem .15rem .7rem; border-left: 2px solid $gold-dim; }
+.ebene-titel { margin-right: .2rem; font-family: $f-head; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: $muted; }
+.pille {
+  display: inline-flex; align-items: center; gap: .45em; padding: .3em .95em; cursor: pointer;
+  font: inherit; font-size: .88rem; color: $parchment; background: transparent;
+  border: 1px solid $gold-dim; border-radius: 2em; transition: all .2s;
+}
+.pille:hover { border-color: $arcane; }
+.pille[aria-pressed="true"] { background: rgba($arcane, .26); border-color: $arcane; color: #fff; box-shadow: 0 0 12px rgba($arcane, .3); }
+.pille:disabled { opacity: .4; cursor: default; }
+.pille .punkt { width: .7em; height: .7em; border-radius: 50%; background: var(--c); opacity: .35; }
+.pille[aria-pressed="true"] .punkt { opacity: 1; box-shadow: 0 0 6px var(--c); }
+
+.fotospur { position: relative; height: 58px; margin-bottom: .9rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .7); }
+.spur-label { position: absolute; left: .8rem; top: 50%; transform: translateY(-50%); font-family: $f-head; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: $muted; }
+.fotopunkt {
+  position: absolute; top: 9px; width: 38px; height: 38px; margin-left: -19px; padding: 0; cursor: pointer;
+  border: 2px solid $gold; border-radius: 50%; background: $panel center / cover; box-shadow: 0 0 10px rgba($arcane, .4);
+  transition: transform .15s, border-color .15s;
+}
+.fotopunkt:hover, .fotopunkt:focus-visible { transform: scale(1.14); border-color: $arcane-lt; outline: none; }
+.fotopunkt .anzahl { position: absolute; right: -7px; bottom: -7px; min-width: 1.4em; height: 1.4em; border-radius: 1em; background: $arcane; color: #fff; font-size: .7rem; line-height: 1.4em; text-align: center; }
+
+.grow-panel { margin-bottom: 1rem; padding: .5rem .8rem .8rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .85); }
+.panel-kopf { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.panel-kopf h3 { margin: .2em 0; font-size: 1rem; letter-spacing: .04em; color: $gold; }
+.panel-legende .leg { margin-left: 1rem; font-size: .88rem; color: $muted; }
+.panel-legende .leg[style]::before { content: ""; display: inline-block; width: .7em; height: .7em; margin-right: .35em; border-radius: 50%; background: var(--c); }
+.leg-voll::before, .leg-strich::before { content: ""; display: inline-block; width: 1.5em; margin-right: .35em; vertical-align: middle; border-top: 2px solid $parchment; }
+.leg-strich::before { border-top-style: dashed; }
+.panel-chart { position: relative; height: 170px; }
+.grow-hinweis { color: $muted; font-style: italic; font-size: .92rem; }
+
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; background: rgba(0, 0, 0, .9); }
+.lightbox img { max-width: 94vw; max-height: 80vh; border: 1px solid $gold; border-radius: 3px; box-shadow: 0 0 40px rgba($arcane, .35); }
+.lb-text { margin: .9rem 0 0; font-family: $f-note; font-style: italic; color: $parchment; text-align: center; }
+.lb-knopf { position: absolute; width: 2.6rem; height: 2.6rem; font-size: 1.4rem; line-height: 1; color: $gold; background: rgba(0, 0, 0, .55); border: 1px solid $gold-dim; border-radius: 50%; cursor: pointer; }
+.lb-knopf:hover { border-color: $arcane; color: $arcane-lt; }
+.lb-zu { top: 1rem; right: 1rem; }
+.lb-vor { right: 1rem; top: 50%; }
+.lb-zur { left: 1rem; top: 50%; }
+@media screen and (max-width: 600px) {
+  .grow-panel { padding: .4rem .5rem .6rem; }
+  .fotopunkt { width: 32px; height: 32px; margin-left: -16px; top: 11px; }
+  .pult-titel { min-width: 100%; }
+}
 
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }

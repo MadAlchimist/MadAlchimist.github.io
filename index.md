@@ -9,7 +9,7 @@ layout: default
 </section>
 
 <div class="tafeln">
-  <a class="tafel" href="{{ '/funde/' | relative_url }}"><strong>Funde &amp; Fehlschläge</strong><span>Was schiefging, was glänzte und wie ich reagiert habe.</span></a>
+  <a class="tafel" href="{{ '/funde/' | relative_url }}"><strong>Funde &amp; Fehlschläge</strong><span>Was schiefging, was glänzte und was einfach skurril war.</span></a>
   <a class="tafel" href="{{ '/bibliothek/' | relative_url }}"><strong>Bibliothek</strong><span>Genetik, Glossar, Selektion und Nährstoffe.</span></a>
   <a class="tafel" href="{{ '/labor/' | relative_url }}"><strong>Labor</strong><span>Mein Setup und wer hier experimentiert.</span></a>
   <a class="tafel" href="{{ '/aktueller-grow/' | relative_url }}"><strong>Aktueller Grow</strong><span>Live aus Canalyze, meinem Analyse-Tool.</span></a>

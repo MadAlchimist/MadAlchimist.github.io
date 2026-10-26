@@ -4,14 +4,15 @@ title: Funde & Fehlschläge
 permalink: /funde/
 ---
 
-Fehler und Highlights aus meinen Grows, jeweils mit Foto, Ursache und
-Konsequenz. Die vollständigen Aufzeichnungen bleiben privat – hier steht nur,
+Fehler, Highlights und Skurriles aus meinen Grows, jeweils mit Foto und
+Einordnung. Die vollständigen Aufzeichnungen bleiben privat – hier steht nur,
 was ich daraus gelernt habe.
 
 <div class="filter">
   <button type="button" data-typ="alle">Alle</button>
   <button type="button" data-typ="fehler">Fehler</button>
   <button type="button" data-typ="highlight">Highlights</button>
+  <button type="button" data-typ="skurril">Skurriles</button>
 </div>
 
 <ul class="karten">
