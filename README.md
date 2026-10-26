@@ -8,7 +8,7 @@ Push auf `main` automatisch neu.
 
 ## Inhalte
 
-- **Funde & Fehlschläge** (Seite `funde.md`, Fälle in `_lernkurve/`): ein Fall pro Datei, `typ: fehler|highlight|skurril`,
+- **Funde, Fehlschläge & Skurriles** (Seite `funde.md`, Fälle in `_lernkurve/`): ein Fall pro Datei, `typ: fehler|highlight|skurril`,
   mit Foto-Liste im Front Matter. Vorlage: `2026-05-26-calmag-doppelt.md`.
 - **Bibliothek** (`bibliothek.md`, Daten in `_data/bibliothek/`): Mendel,
   Selektionstechniken, Glossar, Nährstoffe und Quellen, aus der Excel

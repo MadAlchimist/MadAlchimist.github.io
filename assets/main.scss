@@ -84,7 +84,7 @@ ul { list-style: none; margin-left: 0; }
   background: linear-gradient(90deg, transparent, $gold-dim 12%, $gold 30%, $arcane 50%, $gold 70%, $gold-dim 88%, transparent);
   box-shadow: 0 0 14px rgba($arcane, .35);
 }
-.site-header .wrapper { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 76px; }
+.site-header .wrapper { max-width: 980px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 76px; }
 .site-header .wrapper::after { display: none; } // minima-Clearfix wuerde sonst als Flex-Element mitzaehlen
 .site-title, .site-title:visited {
   display: inline-flex; align-items: center; gap: .6em; border: 0;

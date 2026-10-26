@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Funde & Fehlschläge
+title: Funde, Fehlschläge & Skurriles
 permalink: /funde/
 ---
 
