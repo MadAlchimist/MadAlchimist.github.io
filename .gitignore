@@ -4,3 +4,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
+
+# Originale (enthalten GPS-EXIF, ~1 GB) und Rohdaten: nie committen.
+# Nur aufbereitete Web-Versionen unter assets/ gehoeren ins Repo.
+Quelle_Infos_Fotos/
+Gemfile.lock

@@ -1,0 +1,10 @@
+<li class="karte" data-typ="{{ include.fall.typ }}">
+  <a href="{{ include.fall.url | relative_url }}">
+    {% if include.fall.fotos %}<div class="bild" style="background-image:url('{{ include.fall.fotos[0].datei | relative_url }}')"></div>{% endif %}
+    <div class="text">
+      <span class="badge badge-{{ include.fall.typ }}">{{ include.fall.typ | capitalize }}</span>
+      <h3>{{ include.fall.title }}</h3>
+      <span class="meta">{% if include.fall.woche %}Woche {{ include.fall.woche }}{% endif %}{% if include.fall.pflanze %} · {{ include.fall.pflanze }}{% endif %}</span>
+    </div>
+  </a>
+</li>
