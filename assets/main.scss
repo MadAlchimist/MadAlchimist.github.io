@@ -76,7 +76,7 @@ ul { list-style: none; margin-left: 0; }
 .site-header {
   border-top: 0; border-bottom: 0;
   background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,0));
-  position: relative;
+  position: relative; z-index: 20; // ueber dem Inhalt (der ist position: relative), sonst liegt das Handy-Menue dahinter
 }
 .site-header::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
@@ -99,7 +99,7 @@ ul { list-style: none; margin-left: 0; }
 }
 .site-nav .page-link:hover { color: $arcane-lt; border-bottom: 1px solid $arcane; }
 @media screen and (max-width: 600px) {
-  .site-nav { background: $panel; border-color: $gold-dim; top: 18px; }
+  .site-nav { background: $panel; border-color: $gold-dim; top: 18px; z-index: 30; } // ueber der goldenen Kopflinie
   .site-nav .page-link { margin: 0; display: block; padding: .6em 1em; }
   .site-nav .menu-icon > svg path { fill: $gold; }
   .site-title { font-size: 1rem; }
