@@ -1,0 +1,16 @@
+title: Mad Alchimist
+description: >-
+  Grow-Tagebuch, Notizen und Gedanken rund um Anbau, Genetik und Canalyze.
+theme: minima
+show_excerpts: true
+
+# https://github.com/jekyll/minima -> Header-Links neben Home
+minima:
+  nav_pages:
+    - aktueller-grow.md
+
+# Keine Datei/keinen Ordner hier einschleusen, die GitHub Pages nicht
+# ausliefern soll (GitHub baut ueber den eingebauten Jekyll-Build, kein
+# lokales Gem-Setup noetig).
+exclude:
+  - README.md

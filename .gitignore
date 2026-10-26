@@ -1,0 +1,6 @@
+# Falls Jekyll mal lokal installiert und gebaut wird (fuer GitHub Pages
+# selbst noetig: GitHub baut serverseitig bei jedem Push auf main).
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
