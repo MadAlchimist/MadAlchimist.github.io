@@ -1,0 +1,43 @@
+# Mendel und Selektionsmerkmale (Quelle: Excel-Blatt Mendel).
+stufen:
+- stufe: P (Parental)
+  kreuzung: Reinerbige Eltern
+  regel: 1. Uniformitätsregel
+  fokus: Beobachte, wie "stark" bestimmte Merkmale (z.B. das Blattmuster der Blueberry) im Vergleich zum Vater sind.
+- stufe: F1 (Filial 1)
+  kreuzung: F1 x F1 (Sib-Mating)
+  regel: 2. Spaltungsregel
+  fokus: Hier lernst du die Selektion. In der F2 wirst du die größte Varianz sehen – ideal, um das Auge für Details zu schulen.
+- stufe: F2 (Filial 2)
+  kreuzung: F2 x F2
+  regel: 3. Unabhängigkeitsregel
+  fokus: Hier lernst du, wie sich Merkmale (z.B. Aroma vs. Blütezeit) neu kombinieren.
+- stufe: BX (Backcross)
+  kreuzung: F1 x P1
+  regel: Rückkreuzung
+  fokus: Lerne, wie man ein verlorenes Merkmal eines Elternteils gezielt wieder "reinfischt".
+merkmale:
+- phase: Veggie
+  merkmal: Stamm-Geruch (Stem Rub)
+  wert: Intensität & Nuance (Süß, Gas, Erde)
+  warum: Früher Indikator für das Terpenprofil der Nachkommen.
+- phase: Veggie
+  merkmal: Blatt-Morphologie
+  wert: Breite der Finger, Abstände
+  warum: Zeigt die Dominanz (z.B. Black Widow Sativa-Einfluss vs. Afghani).
+- phase: Blüte (M)
+  merkmal: Pollen-Vitalität
+  wert: Menge & Farbe des Staubs
+  warum: Wichtig für die Lagerfähigkeit (hellgelb/trocken ist ideal).
+- phase: Blüte (M)
+  merkmal: Sack-Struktur
+  wert: Dichte der Trauben
+  warum: Kompakte Väter vererben oft kompaktere Buds an die Töchter.
+- phase: Blüte (W)
+  merkmal: Stigmen-Rezeption
+  wert: Schnelligkeit der Bräunung nach Bestäubung
+  warum: Zeigt, wie effizient die Genetik auf den eigenen Pollen reagiert.
+- phase: Post-Harvest
+  merkmal: Samen-Marmorierung
+  wert: Musterung & Festigkeit
+  warum: Zeichen für volle Reife und Keimkraft-Potenzial.

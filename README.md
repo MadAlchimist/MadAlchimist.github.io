@@ -10,6 +10,9 @@ Push auf `main` automatisch neu.
 
 - **Funde & Fehlschläge** (Seite `funde.md`, Fälle in `_lernkurve/`): ein Fall pro Datei, `typ: fehler|highlight`,
   mit Foto-Liste im Front Matter. Vorlage: `2026-05-26-calmag-doppelt.md`.
+- **Bibliothek** (`bibliothek.md`, Daten in `_data/bibliothek/`): Mendel,
+  Selektionstechniken, Glossar, Nährstoffe und Quellen, aus der Excel
+  übernommen. Texte direkt in den `.yml`-Dateien ändern.
 - **Archiv** (vorerst deaktiviert, `published: false` in `archiv.md`; `_data/archiv.yml`): Scans der historischen Datenerfassung und
   Fotobibliothek, nach Jahr gruppiert.
 - **Aktueller Grow**: soll später aus Canalyze nach `_data/` gespeist werden.

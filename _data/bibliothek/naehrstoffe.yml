@@ -1,0 +1,109 @@
+# Naehrstoffe (Quelle: Excel-Blatt Naehrstoffe). Antagonisten blockieren bei Ueberschuss, Synergisten foerdern.
+- gruppe: Makronährstoffe (Primär & Sekundär)
+  eintraege:
+  - name: Stickstoff
+    symbol: N
+    funktion: Motor für das vegetative Wachstum, Aufbau von Chlorophyll (Blattgrün), Aminosäuren und Proteinen.
+    antagonisten:
+    - Kalium (K)
+    - Chlorid (Cl)
+    synergisten:
+    - Magnesium (Mg)
+    - Molybdän (Mo)
+  - name: Phosphor
+    symbol: P
+    funktion: Wurzelentwicklung, Energieübertragung (ATP) und maßgeblich für die frühe Blütenbildung.
+    antagonisten:
+    - Calcium (Ca)
+    - Eisen (Fe)
+    - Zink (Zn)
+    - Kupfer (Cu)
+    synergisten:
+    - Magnesium (Mg)
+  - name: Kalium
+    symbol: K
+    funktion: Regulation des Wasserhaushalts (Spaltöffnungen), Stabilität der Zellwände, Erhöhung des Blütengewichts.
+    antagonisten:
+    - Magnesium (Mg)
+    - Calcium (Ca)
+    - Stickstoff (N)
+    synergisten:
+    - Mangan (Mn)
+    - Eisen (Fe)
+  - name: Calcium
+    symbol: Ca
+    funktion: Stärkung der Zellwände, Hitzestresstoleranz, reguliert den Transport anderer Nährstoffe.
+    antagonisten:
+    - Kalium (K)
+    - Magnesium (Mg)
+    - Phosphor (P)
+    synergisten:
+    - Stickstoff (N)
+    - Bor (B)
+  - name: Magnesium
+    symbol: Mg
+    funktion: Zentrales Atom des Chlorophyll-Moleküls (ohne Mg keine Photosynthese!), aktiviert Enzyme.
+    antagonisten:
+    - Calcium (Ca)
+    - Kalium (K)
+    - Stickstoff (N)
+    synergisten:
+    - Phosphor (P)
+    - Stickstoff (N)
+  - name: Schwefel
+    symbol: S
+    funktion: 'Wichtig für Aminosäuren und Enzyme. Sehr wichtig: Maßgeblich an der Terpen- und Harzproduktion beteiligt!'
+    antagonisten:
+    - Molybdän (Mo)
+    synergisten: []
+- gruppe: Mikronährstoffe (Spurenelemente)
+  eintraege:
+  - name: Eisen
+    symbol: Fe
+    funktion: Wichtig für die Chlorophyllbildung und Sauerstofftransport. (Mangel zeigt sich oft an leuchtend gelben neuen Trieben).
+    antagonisten:
+    - Mangan (Mn)
+    - Phosphor (P)
+    - Calcium (Ca)
+    - Zink (Zn)
+    synergisten:
+    - Kalium (K)
+  - name: Zink
+    symbol: Zn
+    funktion: Steuert Wuchshormone (Auxine). Ein Mangel führt zu extrem kurzen Internodienabständen und verkrüppelten Blättern.
+    antagonisten:
+    - Eisen (Fe)
+    - Phosphor (P)
+    - Calcium (Ca)
+    synergisten: []
+  - name: Mangan
+    symbol: Mn
+    funktion: Hilft bei der Stickstoffassimilation und Photosynthese.
+    antagonisten:
+    - Eisen (Fe)
+    - Magnesium (Mg)
+    - Calcium (Ca)
+    synergisten:
+    - Kalium (K)
+  - name: Kupfer
+    symbol: Cu
+    funktion: Wichtig für die Atmung der Pflanze und den Kohlenhydratstoffwechsel.
+    antagonisten:
+    - Phosphor (P)
+    - Zink (Zn)
+    - Eisen (Fe)
+    synergisten: []
+  - name: Bor
+    symbol: B
+    funktion: 'Unterstützt Calcium beim Zellaufbau. Schlüsselrolle in der Zucht: Essenziell für die Pollenfertilität, Pollenschlauchbildung und eine erfolgreiche Samenproduktion!'
+    antagonisten: []
+    synergisten:
+    - Calcium (Ca)
+  - name: Molybdän
+    symbol: Mo
+    funktion: Wandelt Nitrat-Stickstoff in eine für die Pflanze nutzbare Form um.
+    antagonisten:
+    - Schwefel (S)
+    - Kupfer (Cu)
+    synergisten:
+    - Stickstoff (N)

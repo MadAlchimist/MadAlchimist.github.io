@@ -9,6 +9,7 @@ show_excerpts: true
 # Menue-Reihenfolge (minima: header_pages)
 header_pages:
   - funde.md
+  - bibliothek.md
   - labor.md
   - aktueller-grow.md
 
