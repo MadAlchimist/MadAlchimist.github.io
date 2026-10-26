@@ -5,12 +5,11 @@
 
   <body>
 
-    <div class="seitendeko links" aria-hidden="true">{% include deko-links.html %}</div>
-    <div class="seitendeko rechts" aria-hidden="true">{% include deko-rechts.html %}</div>
-
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
+      <div class="seitendeko links" aria-hidden="true"><div class="deko-kolben">{% include deko-links.html %}</div></div>
+      <div class="seitendeko rechts" aria-hidden="true"><div class="deko-kolben">{% include deko-rechts.html %}</div></div>
       <div class="wrapper">
         {{ content }}
       </div>

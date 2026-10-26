@@ -115,18 +115,25 @@ ul { list-style: none; margin-left: 0; }
 }
 
 // ---- Seitendeko: Kolben mit Gebraeu und Dampf in den Raendern (nur auf breiten Schirmen) --
+// Jede Spalte reicht ueber die ganze Hoehe des Inhaltsbereichs; der Kolben klebt
+// (sticky) unten im Fenster und bleibt am Ende der Seite auf der Fusszeilenlinie stehen.
+.page-content { position: relative; }
 .seitendeko { display: none; }
 @media screen and (min-width: 1280px) {
   .seitendeko {
-    --rand: calc((100vw - #{$content-width}) / 2);
-    display: block; position: fixed; bottom: 3vh; z-index: -1; pointer-events: none;
-    width: min(250px, calc(var(--rand) - 60px));
+    --w: min(250px, 40vh, calc((100vw - #{$content-width}) / 2 - 60px));  // Breite des Kolbens
+    --boden: 3vh;                                                          // Abstand zum Fensterrand
+    display: block; position: absolute; top: 0; bottom: 0; z-index: -1; pointer-events: none;
+    width: calc((100% - #{$content-width}) / 2);
+  }
+  .seitendeko.links  { left: 0; }
+  .seitendeko.rechts { right: 0; --boden: 8vh; opacity: .85; }
+  .deko-kolben {
+    position: sticky; top: calc(100vh - var(--boden) - var(--w) * 2.2);  // viewBox 200:440
+    width: var(--w); margin: 0 auto;
     filter: drop-shadow(0 0 10px rgba($arcane, .5)) drop-shadow(0 0 22px rgba($potion, .2));
   }
-  .seitendeko.links  { left: calc(var(--rand) / 2);  transform: translateX(-50%); }
-  .seitendeko.rechts { right: calc(var(--rand) / 2); transform: translateX(50%); }
-  .seitendeko svg { display: block; width: 100%; height: auto; max-height: 90vh; }
-  .seitendeko.rechts { bottom: 8vh; opacity: .85; }
+  .deko-kolben svg { display: block; width: 100%; height: auto; }
 }
 @keyframes wehen { 0%, 100% { transform: translateX(0); opacity: 1; } 50% { transform: translateX(7px); opacity: .55; } }
 @keyframes blubbern { 0%, 100% { transform: translateY(0); opacity: .9; } 50% { transform: translateY(-7px); opacity: .35; } }
