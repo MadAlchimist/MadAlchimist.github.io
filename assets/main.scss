@@ -127,7 +127,7 @@ ul { list-style: none; margin-left: 0; }
     width: calc((100% - #{$content-width}) / 2);
   }
   .seitendeko.links  { left: 0; }
-  .seitendeko.rechts { right: 0; --boden: 8vh; opacity: .85; }
+  .seitendeko.rechts { right: 0; }
   .deko-kolben {
     position: sticky; top: calc(100vh - var(--boden) - var(--w) * 2.2);  // viewBox 200:440
     width: var(--w); margin: 0 auto;
