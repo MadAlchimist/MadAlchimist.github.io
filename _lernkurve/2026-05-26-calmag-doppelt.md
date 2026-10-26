@@ -10,7 +10,7 @@ fotos:
   - datei: /assets/lernkurve/2026-05-26-calmag/PXL_20260531_154730646.jpg
     text: "Fehlerausprägung: aufgehellte Blattpartie am unteren Blatt der Hella Jelly."
 ---
-## Was ist passiert?
+## Fehler
 
 An der Hella Jelly traten nekrotische Flecken auf. Zusätzlich war der EC im
 Drain schon vorher auffällig hoch (gesammelter Drain: 1,49).
@@ -23,13 +23,13 @@ wurde, lässt sich nicht genau sagen, seit wann der Fehler bestand. Nach
 Recherche passt das Schadbild zu einer Nährstoffblockade (Antagonismus:
 Überschuss an Ca/Mg verdrängt Kalium und Phosphor).
 
-## Korrektur
+## Reaktion
 
 Ab dem Tag der Entdeckung wurde mit den korrekten Mengen gearbeitet. Schon nach
 etwa fünf Tagen normalisierte sich der Drain-EC, bei einigen Pflanzen lag er fast auf dem Wert
 der Gießlösung (in = out).
 
-## Was daraus folgt
+## Erkenntnis
 
 - Dosierhilfen vor Gebrauch prüfen und nach jedem Wechsel neu kalibrieren.
 - Jede angesetzte Lösung mit EC messen, bevor sie gegossen wird.

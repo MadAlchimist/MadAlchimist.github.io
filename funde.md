@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Lernkurve
-permalink: /lernkurve/
+title: Funde & Fehlschläge
+permalink: /funde/
 ---
 
 Fehler und Highlights aus meinen Grows, jeweils mit Foto, Ursache und

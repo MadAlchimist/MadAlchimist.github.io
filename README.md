@@ -8,11 +8,23 @@ Push auf `main` automatisch neu.
 
 ## Inhalte
 
-- **Lernkurve** (`_lernkurve/`): ein Fall pro Datei, `typ: fehler|highlight`,
+- **Funde & Fehlschläge** (Seite `funde.md`, Fälle in `_lernkurve/`): ein Fall pro Datei, `typ: fehler|highlight`,
   mit Foto-Liste im Front Matter. Vorlage: `2026-05-26-calmag-doppelt.md`.
-- **Archiv** (`_data/archiv.yml`): Scans der historischen Datenerfassung und
+- **Archiv** (vorerst deaktiviert, `published: false` in `archiv.md`; `_data/archiv.yml`): Scans der historischen Datenerfassung und
   Fotobibliothek, nach Jahr gruppiert.
 - **Aktueller Grow**: soll später aus Canalyze nach `_data/` gespeist werden.
+
+## Neuen Fall anlegen (Fall-Editor)
+
+`scripts/fall-editor.html` per Doppelklick im Browser öffnen (läuft offline):
+
+1. Art wählen (Fehler/Highlight), Felder und Foto-Dateinamen ausfüllen.
+2. Den erzeugten **Foto-Befehl** in PowerShell im Projektordner ausführen.
+3. Das **Markdown** kopieren oder als Datei in `_lernkurve/` speichern.
+4. In der Vorschau prüfen, dann committen und pushen.
+
+Aufbau Fehler: Fehler, Ursache, Reaktion, Erkenntnis. Aufbau Highlight:
+Highlight, Was dahinter steckt, Erkenntnis.
 
 ## Design
 

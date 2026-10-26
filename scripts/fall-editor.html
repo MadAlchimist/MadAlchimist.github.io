@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fall-Editor – Mad Alchimist</title>
+<!-- Lokales Werkzeug: Doppelklick zum Oeffnen, keine Verbindung ins Netz.
+     Erzeugt die Markdown-Datei fuer _lernkurve/ und den Foto-Befehl. -->
+<style>
+  @font-face { font-family: "Cinzel"; font-weight: 600; src: url("../assets/fonts/cinzel-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "EB Garamond"; font-weight: 400; src: url("../assets/fonts/eb-garamond-latin-400-normal.woff2") format("woff2"); }
+  :root { --ink:#0f0d0b; --panel:#1a1612; --parch:#e9dcc0; --muted:#a89c82; --gold:#c9a24b; --gold-dim:#7a6330; --potion:#7ccf4f; --blood:#c4513a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--ink); color:var(--parch); font:18px/1.55 "EB Garamond",Georgia,serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  h1,h2,label.t,button,.badge { font-family:"Cinzel",Georgia,serif; letter-spacing:.06em; }
+  h1 { color:var(--gold); text-transform:uppercase; font-size:1.6rem; margin:.2em 0; }
+  h2 { color:var(--gold); font-size:1.05rem; text-transform:uppercase; margin:2rem 0 .6rem; border-bottom:1px solid var(--gold-dim); padding-bottom:.3rem; }
+  p.hint { color:var(--muted); font-style:italic; margin:.2rem 0 1rem; }
+  .row { display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+  label.t { display:block; font-size:.78rem; text-transform:uppercase; color:var(--gold); margin:.9rem 0 .25rem; }
+  input, select, textarea { width:100%; background:var(--panel); color:var(--parch); border:1px solid var(--gold-dim); border-radius:3px; padding:.5rem .6rem; font:inherit; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,162,75,.25); }
+  textarea { min-height: 5.5rem; resize: vertical; }
+  .typ { display:flex; gap:.6rem; }
+  .typ label { flex:1; cursor:pointer; }
+  .typ input { position:absolute; opacity:0; width:0; }
+  .typ span { display:block; text-align:center; padding:.7rem; border:1px solid var(--gold-dim); border-radius:3px; font-family:"Cinzel",serif; text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; }
+  .typ input:checked + span.f { background:var(--blood); border-color:var(--blood); color:#fff; }
+  .typ input:checked + span.h { background:var(--potion); border-color:var(--potion); color:var(--ink); }
+  .foto { display:grid; grid-template-columns: 1fr 2fr auto; gap:.6rem; margin-bottom:.5rem; align-items:center; }
+  @media (max-width: 640px) { .foto { grid-template-columns: 1fr; } }
+  button { background:transparent; color:var(--parch); border:1px solid var(--gold-dim); border-radius:3px; padding:.5rem 1rem; cursor:pointer; text-transform:uppercase; font-size:.75rem; }
+  button:hover { background:var(--gold); color:var(--ink); border-color:var(--gold); }
+  button.primary { background:var(--gold); color:var(--ink); border-color:var(--gold); }
+  .out { font:14px/1.45 Consolas, monospace; min-height: 14rem; white-space: pre; }
+  .out.small { min-height: 3.2rem; }
+  .warn { color:#ffb199; font-size:.9rem; margin:.3rem 0; }
+  .actions { display:flex; gap:.6rem; flex-wrap:wrap; margin:.6rem 0; }
+  .ok { color:var(--potion); font-size:.9rem; align-self:center; }
+  ol.steps { color:var(--muted); padding-left:1.2rem; }
+  ol.steps b { color:var(--parch); font-weight:400; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fall-Editor</h1>
+  <p class="hint">Ausfüllen, kopieren (oder speichern), in <b>_lernkurve/</b> ablegen. Leere Felder werden weggelassen.</p>
+
+  <h2>1 · Art und Kopf</h2>
+  <div class="typ" role="radiogroup" aria-label="Art des Falls">
+    <label><input type="radio" name="typ" value="fehler" checked><span class="f">Fehler</span></label>
+    <label><input type="radio" name="typ" value="highlight"><span class="h">Highlight</span></label>
+  </div>
+
+  <label class="t" for="titel">Titel</label>
+  <input id="titel" placeholder="z. B. Calmag doppelt dosiert – Pipette falsch abgelesen">
+
+  <div class="row">
+    <div><label class="t" for="pflanze">Pflanze / Sorte</label><input id="pflanze" placeholder="z. B. Hella Jelly"></div>
+    <div><label class="t" for="phase">Phase</label>
+      <select id="phase"><option value="">–</option><option>Sämmling</option><option>Veggi</option><option>Pre-Blüte</option><option>Blüte</option><option>Trocknung</option><option>Ernte</option></select></div>
+    <div><label class="t" for="woche">Woche im Grow (optional)</label><input id="woche" type="number" min="1" placeholder="z. B. 5"></div>
+    <div><label class="t" for="datum">Datum (nur zum Sortieren, wird nicht angezeigt)</label><input id="datum" type="date"></div>
+  </div>
+
+  <h2>2 · Inhalt</h2>
+  <div id="felder"></div>
+
+  <h2>3 · Fotos</h2>
+  <p class="hint">Die Dateien auswählen (nur die Namen werden gelesen, nichts wird hochgeladen) oder Zeilen von Hand anlegen.</p>
+  <div class="actions">
+    <button type="button" id="pick">Fotos auswählen …</button>
+    <button type="button" id="addfoto">+ Zeile</button>
+    <input id="files" type="file" accept="image/*" multiple hidden>
+  </div>
+  <label class="t" for="quelle">Ordner der Originale (für den Befehl)</label>
+  <input id="quelle" value="Quelle_Infos_Fotos\Fotos\JJJJ-MM-TT">
+  <div id="fotos" style="margin-top:.8rem"></div>
+  <div id="fotowarn"></div>
+
+  <h2>4 · Ergebnis</h2>
+  <ol class="steps">
+    <li><b>Foto-Befehl</b> in PowerShell im Projektordner ausführen (verkleinert, entfernt GPS).</li>
+    <li><b>Markdown</b> als Datei in <b>_lernkurve/</b> speichern.</li>
+    <li>Vorschau prüfen, dann committen und pushen.</li>
+  </ol>
+
+  <label class="t" for="o-cmd">Foto-Befehl</label>
+  <textarea id="o-cmd" class="out small" readonly></textarea>
+  <div class="actions"><button type="button" data-copy="o-cmd">Kopieren</button><span class="ok" id="ok-o-cmd"></span></div>
+
+  <label class="t" for="o-name">Dateiname</label>
+  <textarea id="o-name" class="out small" readonly style="min-height:2.6rem"></textarea>
+
+  <label class="t" for="o-md">Markdown</label>
+  <textarea id="o-md" class="out" readonly></textarea>
+  <div class="actions">
+    <button type="button" class="primary" data-copy="o-md">Markdown kopieren</button>
+    <button type="button" id="save">Als Datei speichern</button>
+    <span class="ok" id="ok-o-md"></span>
+  </div>
+</main>
+
+<script>
+// Abschnitte je Art: [Schluessel, Ueberschrift, Hinweis, als Liste?]
+const ABSCHNITTE = {
+  fehler: [
+    ["fehler",    "Fehler",     "Was ist passiert? Wie hat sich der Fehler gezeigt?", false],
+    ["ursache",   "Ursache",    "Woran lag es – oder was vermutest du?", false],
+    ["reaktion",  "Reaktion",   "Was hast du getan, und was hat es bewirkt?", false],
+    ["erkenntnis","Erkenntnis", "Eine Zeile pro Punkt: was machst du künftig anders?", true]
+  ],
+  highlight: [
+    ["highlight", "Highlight",       "Was zeigt das Foto, was ist besonders?", false],
+    ["dahinter",  "Was dahinter steckt", "Was hat dazu beigetragen (Genetik, Klima, Pflege)?", false],
+    ["erkenntnis","Erkenntnis",      "Eine Zeile pro Punkt: was nimmst du mit?", true]
+  ]
+};
+const BILD_PRAEFIX = { fehler: "Fehlerausprägung: ", highlight: "Highlight: " };
+
+const $ = id => document.getElementById(id);
+const typ = () => document.querySelector('input[name="typ"]:checked').value;
+
+function slug(s) {
+  return s.toLowerCase().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
+          .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+}
+const yq = s => '"' + s.replace(/\\/g,"\\\\").replace(/"/g,'\\"') + '"';
+
+// ---- Felder je Art aufbauen (Eingaben bleiben beim Wechsel erhalten) ----
+const werte = {};
+function felderBauen() {
+  const box = $("felder");
+  box.querySelectorAll("textarea").forEach(t => werte[t.id] = t.value);
+  box.innerHTML = "";
+  ABSCHNITTE[typ()].forEach(([k, kopf, hint]) => {
+    const l = document.createElement("label"); l.className = "t"; l.htmlFor = "f-" + k; l.textContent = kopf;
+    const t = document.createElement("textarea"); t.id = "f-" + k; t.placeholder = hint; t.value = werte["f-" + k] || "";
+    t.addEventListener("input", ausgeben);
+    box.append(l, t);
+  });
+  ausgeben();
+}
+
+// ---- Fotos ----
+function fotoZeile(name = "", text = "") {
+  const z = document.createElement("div"); z.className = "foto";
+  const n = document.createElement("input"); n.placeholder = "Dateiname, z. B. PXL_2026.jpg"; n.value = name; n.className = "fn";
+  const t = document.createElement("input"); t.placeholder = BILD_PRAEFIX[typ()] + "Beschreibung"; t.value = text; t.className = "ft";
+  const x = document.createElement("button"); x.type = "button"; x.textContent = "✕"; x.title = "Entfernen";
+  x.onclick = () => { z.remove(); ausgeben(); };
+  [n, t].forEach(e => e.addEventListener("input", ausgeben));
+  z.append(n, t, x); $("fotos").append(z);
+}
+$("pick").onclick = () => $("files").click();
+$("files").onchange = e => { [...e.target.files].forEach(f => fotoZeile(f.name)); e.target.value = ""; ausgeben(); };
+$("addfoto").onclick = () => { fotoZeile(); };
+
+function fotoListe() {
+  return [...document.querySelectorAll("#fotos .foto")]
+    .map(z => ({ name: z.querySelector(".fn").value.trim(), text: z.querySelector(".ft").value.trim() }))
+    .filter(f => f.name);
+}
+const basis = n => n.replace(/\.[^.]+$/, "");
+
+// ---- Ausgabe ----
+function ausgeben() {
+  const t = typ(), titel = $("titel").value.trim(), s = slug(titel) || "neuer-fall";
+  const datum = $("datum").value || new Date().toISOString().slice(0, 10);
+  const fotos = fotoListe(), ordner = "/assets/lernkurve/" + s;
+
+  const fm = ["---", "layout: fall", "title: " + yq(titel || "Titel"), "typ: " + t,
+              "datum: " + datum + "   # nur zum Sortieren, wird nicht angezeigt"];
+  if ($("woche").value) fm.push("woche: " + parseInt($("woche").value, 10) + "           # optional: Woche im Grow");
+  if ($("pflanze").value.trim()) fm.push("pflanze: " + yq($("pflanze").value.trim()));
+  if ($("phase").value) fm.push("phase: " + $("phase").value);
+  if (fotos.length) {
+    fm.push("fotos:");
+    fotos.forEach(f => { fm.push("  - datei: " + ordner + "/" + basis(f.name) + ".jpg"); fm.push("    text: " + yq(f.text || BILD_PRAEFIX[t].replace(/:\s*$/, ""))); });
+  }
+  fm.push("---");
+
+  const teile = [];
+  ABSCHNITTE[t].forEach(([k, kopf, , liste]) => {
+    const v = ($("f-" + k)?.value || "").trim();
+    if (!v) return;
+    const text = liste ? v.split(/\r?\n/).filter(x => x.trim()).map(x => "- " + x.replace(/^[-*•]\s*/, "").trim()).join("\n") : v;
+    teile.push("## " + kopf + "\n\n" + text);
+  });
+  $("o-md").value = fm.join("\n") + "\n" + teile.join("\n\n") + (teile.length ? "\n" : "");
+  $("o-name").value = datum + "-" + s + ".md";
+
+  const q = ($("quelle").value.trim().replace(/[\\/]+$/, "")) || "QUELLE";
+  $("o-cmd").value = fotos.length
+    ? ".\\scripts\\Optimize-Photos.ps1 -Source " + fotos.map(f => '"' + q + "\\" + f.name + '"').join(",") + " -Dest assets\\lernkurve\\" + s
+    : "(erst Fotos auswählen)";
+
+  const warn = fotos.filter(f => /[^A-Za-z0-9._-]/.test(basis(f.name)));
+  $("fotowarn").innerHTML = warn.map(f => '<div class="warn">⚠ „' + f.name.replace(/</g, "&lt;") + '“ enthält Leer- oder Sonderzeichen – nach dem Befehl die Datei in assets umbenennen und den Namen oben anpassen.</div>').join("");
+}
+
+document.querySelectorAll('input[name="typ"]').forEach(r => r.addEventListener("change", () => { felderBauen(); }));
+["titel", "pflanze", "phase", "woche", "datum", "quelle"].forEach(id => $(id).addEventListener("input", ausgeben));
+
+document.querySelectorAll("[data-copy]").forEach(b => b.onclick = async () => {
+  const id = b.dataset.copy, el = $(id);
+  try { await navigator.clipboard.writeText(el.value); } catch { el.select(); document.execCommand("copy"); }
+  const ok = $("ok-" + id); ok.textContent = "✓ kopiert"; setTimeout(() => ok.textContent = "", 2000);
+});
+$("save").onclick = () => {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([$("o-md").value], { type: "text/markdown;charset=utf-8" }));
+  a.download = $("o-name").value; a.click(); URL.revokeObjectURL(a.href);
+};
+
+$("datum").value = new Date().toISOString().slice(0, 10);
+felderBauen();
+</script>
+</body>
+</html>

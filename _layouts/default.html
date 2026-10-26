@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <div class="seitendeko links" aria-hidden="true">{% include deko-links.html %}</div>
+    <div class="seitendeko rechts" aria-hidden="true">{% include deko-rechts.html %}</div>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

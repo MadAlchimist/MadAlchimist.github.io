@@ -1,21 +1,22 @@
 title: Mad Alchimist
 description: >-
-  Lernkurve aus sechs Jahren Anbau-Dokumentation: Fehler, Highlights und der
-  Weg zu Canalyze.
+  Funde und Fehlschläge aus sechs Jahren Anbau-Dokumentation – und der Weg
+  zu Canalyze.
 theme: minima
+lang: de
 show_excerpts: true
 
 # Menue-Reihenfolge (minima: header_pages)
 header_pages:
-  - lernkurve.md
-  - archiv.md
+  - funde.md
+  - labor.md
   - aktueller-grow.md
 
 # Eigene Collection: ein Fall (Fehler/Highlight) pro Datei in _lernkurve/
 collections:
   lernkurve:
     output: true
-    permalink: /lernkurve/:name/
+    permalink: /funde/:name/
 
 # Keine Datei/keinen Ordner hier einschleusen, die GitHub Pages nicht
 # ausliefern soll (GitHub baut ueber den eingebauten Jekyll-Build, kein

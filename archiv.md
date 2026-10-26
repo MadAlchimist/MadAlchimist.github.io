@@ -2,6 +2,7 @@
 layout: page
 title: Archiv
 permalink: /archiv/
+published: false   # erst auf true setzen (und in _config.yml unter header_pages eintragen), wenn Material da ist
 ---
 
 Scans meiner handschriftlichen Datenerfassung und Fotos aus den letzten sechs

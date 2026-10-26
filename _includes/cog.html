@@ -1,0 +1,10 @@
+<svg class="cog {{ include.class }}" viewBox="-50 -50 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="4">
+    <circle r="27"/>
+    <circle r="9"/>
+    {% for i in (0..5) %}{% assign a = i | times: 60 %}<line x1="0" y1="-9" x2="0" y2="-27" transform="rotate({{ a }})"/>{% endfor %}
+  </g>
+  <g fill="currentColor">
+    {% for i in (0..9) %}{% assign a = i | times: 36 %}<rect x="-5" y="-43" width="10" height="14" rx="2" transform="rotate({{ a }})"/>{% endfor %}
+  </g>
+</svg>
