@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper wrapper-breit">
+        <nav class="brotkrumen" aria-label="Pfad"><a href="{{ '/canalyze/' | relative_url }}">Canalyze</a> <span>›</span> Handbuch</nav>
+        <h1 class="post-title">Canalyze – {{ page.title }}</h1>
+
+        <div class="hb-layout">
+          <details class="hb-toc" id="hb-toc-box">
+            <summary>Inhalt</summary>
+            <ol id="hb-toc"></ol>
+          </details>
+          <article class="hb-inhalt post-content" id="hb-inhalt">
+            {{ content }}
+            <p class="zurueck"><a href="{{ '/canalyze/' | relative_url }}">← Zurück zu Canalyze</a></p>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script>
+    // Inhaltsverzeichnis aus den Ueberschriften (h2, darunter h3) bauen und aktuelles Kapitel markieren
+    (function () {
+      var inhalt = document.getElementById('hb-inhalt'), liste = document.getElementById('hb-toc'), box = document.getElementById('hb-toc-box');
+      var heads = inhalt.querySelectorAll('h2[id], h3[id]'), letztesH2 = null, links = {};
+      heads.forEach(function (h) {
+        var li = document.createElement('li'), a = document.createElement('a');
+        a.href = '#' + h.id; a.textContent = h.textContent; li.appendChild(a); links[h.id] = a;
+        if (h.tagName === 'H2') { liste.appendChild(li); letztesH2 = li; }
+        else {
+          if (!letztesH2) return;
+          var sub = letztesH2.querySelector('ol') || letztesH2.appendChild(document.createElement('ol'));
+          sub.appendChild(li);
+        }
+      });
+      var gross = window.matchMedia('(min-width: 980px)');
+      function setOffen() { if (gross.matches) box.setAttribute('open', ''); else box.removeAttribute('open'); }
+      setOffen(); (gross.addEventListener || gross.addListener).call(gross, 'change', setOffen);
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (eintraege) {
+          eintraege.forEach(function (e) {
+            if (e.isIntersecting) {
+              Object.keys(links).forEach(function (k) { links[k].classList.remove('aktiv'); });
+              if (links[e.target.id]) links[e.target.id].classList.add('aktiv');
+            }
+          });
+        }, { rootMargin: '0px 0px -75% 0px' });
+        heads.forEach(function (h) { io.observe(h); });
+      }
+    })();
+    </script>
+
+  </body>
+
+</html>

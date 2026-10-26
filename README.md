@@ -13,6 +13,11 @@ Push auf `main` automatisch neu.
 - **Bibliothek** (`bibliothek.md`, Daten in `_data/bibliothek/`): Mendel,
   Selektionstechniken, Glossar, Nährstoffe und Quellen, aus der Excel
   übernommen. Texte direkt in den `.yml`-Dateien ändern.
+- **Canalyze** (`canalyze.md`, Bilder in `assets/canalyze/`): Kurzbeschreibung
+  mit Screenshots, Teaser auf der Startseite. Das **Handbuch**
+  (`canalyze/handbuch.md`, Layout `_layouts/handbuch.html`) hat ein eigenes
+  Inhaltsverzeichnis und ist nur über den Link am Ende der Canalyze-Seite
+  erreichbar, nicht im Menü.
 - **Archiv** (vorerst deaktiviert, `published: false` in `archiv.md`; `_data/archiv.yml`): Scans der historischen Datenerfassung und
   Fotobibliothek, nach Jahr gruppiert.
 - **Aktueller Grow** (`aktueller-grow.md`, Skript `assets/js/grow.js`): interaktive

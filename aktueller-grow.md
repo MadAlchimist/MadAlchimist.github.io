@@ -4,8 +4,8 @@ title: Aktueller Grow
 permalink: /aktueller-grow/
 ---
 
-Der laufende Durchgang, direkt aus **Canalyze**, meinem selbst gebauten
-Grow-Analyse-Tool. Zu Beginn siehst du Klima und Fotos. Über die Ebenen lassen
+Der laufende Durchgang, direkt aus [**Canalyze**]({{ '/canalyze/' | relative_url }}),
+meinem selbst gebauten Grow-Analyse-Tool. Zu Beginn siehst du Klima und Fotos. Über die Ebenen lassen
 sich Gießen, Zusätze und Ereignisse dazuschalten, Pflanzen ein- und ausblenden
 und der Zeitraum eingrenzen.
 

@@ -84,7 +84,7 @@ ul { list-style: none; margin-left: 0; }
   background: linear-gradient(90deg, transparent, $gold-dim 12%, $gold 30%, $arcane 50%, $gold 70%, $gold-dim 88%, transparent);
   box-shadow: 0 0 14px rgba($arcane, .35);
 }
-.site-header .wrapper { max-width: 980px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 76px; }
+.site-header .wrapper { max-width: 1120px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 76px; }
 .site-header .wrapper::after { display: none; } // minima-Clearfix wuerde sonst als Flex-Element mitzaehlen
 .site-title, .site-title:visited {
   display: inline-flex; align-items: center; gap: .6em; border: 0;
@@ -164,7 +164,7 @@ ul { list-style: none; margin-left: 0; }
 .zierlinie::after { transform: scaleX(-1); }
 .zierlinie .cog { width: 28px; height: 28px; }
 
-.tafeln { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1.1rem; margin: 1rem 0 2.5rem; }
+.tafeln { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.1rem; margin: 1rem 0 2.5rem; }
 .tafel {
   display: block; padding: 1.4rem 1.3rem; color: $parchment; border: 1px solid $gold-dim;
   // Nieten in den Ecken + dunkle Messingtafel
@@ -371,6 +371,63 @@ h2, h3 { scroll-margin-top: 1rem; }
   .fotopunkt { width: 32px; height: 32px; margin-left: -16px; top: 11px; }
   .pult-titel { min-width: 100%; }
 }
+
+// ---- Canalyze und Handbuch ---------------------------------------------------------------------------
+code {
+  padding: .05em .4em; font-family: Consolas, "Courier New", monospace; font-size: .88em; color: $arcane-lt;
+  background: rgba($arcane, .12); border: 1px solid rgba($arcane, .35); border-radius: 3px;
+}
+.shot { margin: 1.2rem 0 1.4rem; }
+.shot a { display: block; padding: 7px; border: 1px solid $gold-dim; border-radius: 4px; background: $panel; box-shadow: 0 10px 30px rgba(0,0,0,.5), inset 0 0 0 1px rgba($gold, .12); }
+.shot a:hover { border-color: $arcane; box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 28px rgba($arcane, .3); text-shadow: none; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 2px; }
+
+.knopf, .knopf:visited {
+  display: inline-block; padding: .65em 1.5em; font-family: $f-head; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: $ink; background: $gold; border: 1px solid $gold; border-radius: 2px; transition: all .2s;
+}
+.knopf:hover { background: $arcane; border-color: $arcane; color: #fff; box-shadow: 0 0 22px rgba($arcane, .5); text-shadow: none; }
+.handbuch-link { margin: 1.4rem 0 2rem; }
+
+.canalyze-banner {
+  display: grid; grid-template-columns: 1fr 1.25fr; gap: 1.6rem; align-items: center; margin: 1rem 0 2.5rem; padding: 1.4rem;
+  border: 1px solid $gold-dim; border-radius: 4px; background: linear-gradient(160deg, rgba($panel, .96), rgba(#0b0a08, .96));
+}
+.canalyze-banner h3 { margin: 0 0 .5em; font-size: 1.3rem; }
+.canalyze-banner p { margin: 0 0 1.1em; }
+.cb-bild { display: block; padding: 6px; border: 1px solid $gold-dim; border-radius: 4px; background: $panel; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+.cb-bild:hover { border-color: $arcane; box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 28px rgba($arcane, .3); }
+.cb-bild img { display: block; width: 100%; height: auto; border-radius: 2px; }
+@media screen and (max-width: 700px) { .canalyze-banner { grid-template-columns: 1fr; padding: 1rem; } }
+
+.wrapper-breit { max-width: 1100px; }
+.brotkrumen { margin: 0 0 .3rem; font-family: $f-head; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: $muted; }
+.brotkrumen span { margin: 0 .4em; color: $arcane; }
+.hb-layout { display: block; margin-top: 1.2rem; }
+.hb-toc { margin: 0 0 1.6rem; padding: .9rem 1.2rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .85); }
+.hb-toc summary { cursor: pointer; font-family: $f-head; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: $gold; }
+.hb-toc ol { margin: .7rem 0 0; padding-left: 1.2rem; font-size: .95rem; line-height: 1.45; }
+.hb-toc ol ol { margin: .2rem 0 .4rem; font-size: .9rem; }
+.hb-toc li { margin: .25rem 0; }
+.hb-toc a { border: 0; color: $parchment; }
+.hb-toc a:hover, .hb-toc a.aktiv { color: $arcane-lt; }
+.hb-toc a.aktiv { text-shadow: 0 0 12px rgba($arcane, .6); }
+@media screen and (min-width: 980px) {
+  .hb-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.6rem; align-items: start; }
+  .hb-toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: auto; margin: 0; }
+  .hb-toc summary { pointer-events: none; }
+}
+.hb-inhalt { min-width: 0; }
+.hb-inhalt h2:first-child { margin-top: 0; }
+.hb-inhalt table {
+  display: block; overflow-x: auto; width: 100%; margin: 1rem 0 1.6rem; border-collapse: collapse; border: 1px solid $gold-dim; background: rgba($panel, .8); font-size: .96rem;
+}
+.hb-inhalt th { font-family: $f-head; font-weight: 400; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; text-align: left; color: $gold; background: rgba(0,0,0,.35); border-bottom: 1px solid $gold-dim; padding: .65em .9em; }
+.hb-inhalt td { padding: .65em .9em; vertical-align: top; border: 0; border-bottom: 1px solid rgba($gold, .14); }
+.hb-inhalt tbody tr:nth-child(odd)  { background: transparent; }
+.hb-inhalt tbody tr:nth-child(even) { background: rgba($gold, .045); }
+.hb-inhalt tbody tr:last-child td { border-bottom: 0; }
+.hb-inhalt ol { margin-left: 1.4rem; }
 
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }

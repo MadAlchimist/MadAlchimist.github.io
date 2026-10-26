@@ -17,6 +17,17 @@ layout: default
 
 <div class="zierlinie">{% include cog.html %}</div>
 
+<h2>Aus der Werkstatt</h2>
+
+<section class="canalyze-banner">
+  <div>
+    <h3>Canalyze</h3>
+    <p>Mein selbst gebautes Grow-Analyse-Tool: läuft komplett lokal auf meinem PC, ohne Cloud, mit Dashboard, Stammbaum und Boden-Frühwarnsystem.</p>
+    <a class="knopf" href="{{ '/canalyze/' | relative_url }}">Mehr zu Canalyze</a>
+  </div>
+  <a class="cb-bild" href="{{ '/canalyze/' | relative_url }}"><img src="{{ '/assets/canalyze/dashboard.png' | relative_url }}" alt="Canalyze: Dashboard mit Klimaverlauf und Boden-Status" loading="lazy"></a>
+</section>
+
 <h2>Frisch aus dem Kessel</h2>
 <ul class="karten">
 {% assign faelle = site.lernkurve | sort: "datum" | reverse %}
