@@ -30,7 +30,9 @@ Alle Angaben sind nach bestem Wissen zusammengetragen, aus Fachbüchern, eigener
 Recherche und eigenen Beobachtungen, aber **ohne Gewähr** auf Richtigkeit und
 Vollständigkeit. Für Schäden, die aus der Anwendung der Inhalte entstehen, wird
 nicht gehaftet. Texte und Fotos sind eigene Werke und dürfen nicht ohne
-Erlaubnis weiterverwendet werden.
+Erlaubnis weiterverwendet werden. Verweise auf externe Seiten (zum Beispiel
+als Quelle) sind keine Empfehlung; für deren Inhalte bin ich nicht
+verantwortlich.
 
 ## Datenschutz
 

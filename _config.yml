@@ -11,11 +11,15 @@ header_pages:
   - funde.md
   - bibliothek.md
   - labor.md
+  - schriftrollen.md
   - canalyze.md
   - aktueller-grow.md
 
 # Eigene Collection: ein Fall (Fehler/Highlight) pro Datei in _lernkurve/
 collections:
+  schriftrollen:
+    output: true
+    permalink: /schriftrollen/:name/
   lernkurve:
     output: true
     permalink: /funde/:name/

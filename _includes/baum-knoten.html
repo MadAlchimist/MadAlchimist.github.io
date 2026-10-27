@@ -1,0 +1,20 @@
+{%- comment -%}
+  Ein Knoten des Stammbaums (rekursiv). Parameter: k = Knoten aus _data/staemme.yml
+{%- endcomment -%}
+{%- if include.k.eltern and include.k.eltern.size > 0 -%}
+<li class="kn kn-ast"{% if include.k.spur and include.k.siehe_oben != true %} data-spur="1"{% endif %}{% if include.k.unbekannt %} data-unb="1"{% endif %}>
+  <details open>
+    <summary>{% include baum-label.html k=include.k %}</summary>
+    <ul>
+      {%- for e in include.k.eltern -%}
+        {%- unless forloop.first -%}<li class="kreuz" aria-hidden="true">×</li>{%- endunless -%}
+        {%- include baum-knoten.html k=e -%}
+      {%- endfor -%}
+    </ul>
+  </details>
+</li>
+{%- else -%}
+<li class="kn kn-blatt"{% if include.k.spur and include.k.siehe_oben != true %} data-spur="1"{% endif %}{% if include.k.unbekannt %} data-unb="1"{% endif %}>
+  {% include baum-label.html k=include.k %}
+</li>
+{%- endif -%}

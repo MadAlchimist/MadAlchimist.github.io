@@ -1,0 +1,8 @@
+<span class="kn-zeile"><span class="kn-name">{{ include.k.name | escape }}</span>
+{%- if include.k.zusatz %} <span class="kn-zusatz">({{ include.k.zusatz | escape }})</span>{% endif -%}
+{%- if include.k.spur %} <span class="marke spur" title="Spur dokumentierter Zuchtarbeit">{{ include.k.spur | escape }}</span>{% endif -%}
+{%- if include.k.unbekannt %} <span class="marke unb" title="Herkunft unbekannt">Unknown</span>{% endif -%}
+{%- if include.k.ende %} <span class="kn-ende">→ {{ include.k.ende | escape }}</span>{% endif -%}
+{%- if include.k.siehe_oben %} <span class="kn-siehe">(siehe oben)</span>{% endif -%}
+{%- if include.k.mehr %} <span class="kn-mehr" title="Der Stammbaum geht hier weiter">…</span>{% endif -%}
+</span>

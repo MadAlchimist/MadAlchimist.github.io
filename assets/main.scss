@@ -480,6 +480,71 @@ code {
 .hb-inhalt tbody tr:last-child td { border-bottom: 0; }
 .hb-inhalt ol { margin-left: 1.4rem; }
 
+// ---- Schriftrollen & Stammbaeume ------------------------------------------------------------------------
+.untertitel { margin: -.2rem 0 1.4rem; font-family: $f-note; font-style: italic; font-size: 1.2rem; color: $muted; }
+.rolle {
+  position: relative; margin: 1.8rem 0 2.6rem; padding: 2.2rem 1.8rem 2rem; border: 1px solid $gold-dim; border-radius: 6px;
+  background: linear-gradient(180deg, rgba(233, 220, 192, .075), rgba(233, 220, 192, .03)); box-shadow: inset 0 0 70px rgba(0, 0, 0, .4);
+}
+.rolle::before, .rolle::after {
+  content: ""; position: absolute; left: -8px; right: -8px; height: 15px; border-radius: 8px;
+  background: linear-gradient(180deg, #8d7336, $gold 45%, #6b5624); box-shadow: 0 5px 14px rgba(0, 0, 0, .55);
+}
+.rolle::before { top: -9px; }
+.rolle::after { bottom: -9px; }
+.rolle > p, .rolle > h2, .rolle > h3 { max-width: 46rem; }
+.rolle > h2:first-child { margin-top: 0; }
+.rolle .marke { margin-left: 0; }
+@media screen and (max-width: 600px) { .rolle { padding: 1.8rem 1.1rem 1.6rem; } }
+
+.schrift-liste { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+.post-content .schrift-liste > li, .schrift-liste > li { padding-left: 0; }
+.post-content .schrift-liste > li::before, .schrift-liste > li::before { content: none; }
+.schrift-karte a {
+  position: relative; display: block; height: 100%; padding: 1.5rem 1.3rem 1.3rem; color: $parchment; border: 1px solid $gold-dim; border-radius: 4px;
+  background: linear-gradient(180deg, rgba(233, 220, 192, .07), rgba($panel, .95)); transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.schrift-karte a::before { content: ""; position: absolute; left: 12px; right: 12px; top: -6px; height: 9px; border-radius: 5px; background: linear-gradient(180deg, #8d7336, $gold 50%, #6b5624); }
+.schrift-karte a:hover { transform: translateY(-3px); border-color: $arcane; box-shadow: 0 10px 30px rgba(0, 0, 0, .55), 0 0 26px rgba($arcane, .25); color: $parchment; text-shadow: none; }
+.schrift-thema { font-family: $f-head; font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; color: $arcane-lt; }
+.schrift-karte h3 { margin: .45em 0 .35em; font-size: 1.15rem; line-height: 1.3; }
+.schrift-karte p { margin: 0; color: $muted; font-style: italic; }
+
+.stammvergleich { margin: 1.2rem 0 2.6rem; }
+.sv-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-bottom: 1rem; }
+.sv-marken { display: inline-flex; align-items: center; gap: .45em; margin: 0; font-size: .92rem; color: $muted; cursor: pointer; }
+.sv-marken input { accent-color: $arcane; }
+.sv-spalten { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+@media screen and (min-width: 860px) { .sv-spalten { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.sv-text { max-width: 46rem; margin: 1rem 0 0; font-style: italic; color: $muted; }
+
+.baum { padding: 1rem 1.1rem 1.2rem; border: 1px solid $gold-dim; border-radius: 4px; background: rgba($panel, .88); min-width: 0; }
+.baum h4 { margin: 0 0 .2rem; font-size: 1.1rem; color: $gold; }
+.baum-stat { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; margin: 0 0 .8rem; font-family: $f-note; font-style: italic; font-size: .92rem; color: $muted; }
+.baum-stat b { font-style: normal; color: $parchment; }
+.baum ul { list-style: none; margin: 0; padding: 0 0 0 1.05rem; border-left: 1px solid rgba($gold, .3); }
+.baum ul.baum-wurzel { padding-left: 0; border-left: 0; }
+.post-content .baum ul:not(.karten) > li { padding-left: 0; }
+.post-content .baum ul:not(.karten) > li::before { content: none; }   // Listen-Raute des Themes hier nicht
+.baum li.kn { margin: .22rem 0; padding: 0; font-size: .97rem; line-height: 1.4; }
+.baum li.kreuz { margin: 0 0 0 .15rem; font-size: .75rem; line-height: 1; color: $gold-dim; }
+.baum summary { cursor: pointer; list-style: none; border-radius: 2px; }
+.baum summary::-webkit-details-marker { display: none; }
+.baum summary:hover { background: rgba($arcane, .12); }
+.baum summary:focus-visible { outline: 1px solid $arcane; }
+.baum summary::before { content: "▾"; display: inline-block; width: 1.15em; color: $gold; }
+.baum details:not([open]) > summary::before { content: "▸"; }
+.post-content .baum ul:not(.karten) > li.kn-blatt::before { content: "•"; position: static; display: inline-block; width: 1.15em; font-size: 1em; text-shadow: none; color: $gold-dim; }
+.baum .kn-name { color: $parchment; }
+.baum .kn-zusatz, .baum .kn-siehe { margin-left: .3em; font-size: .88em; color: $muted; }
+.baum .kn-ende { margin-left: .4em; font-size: .9em; font-style: italic; color: $muted; }
+.baum .kn-mehr { margin-left: .3em; color: $gold; letter-spacing: .15em; }
+
+.marke { display: inline-block; margin-left: .4em; padding: 0 .6em; border: 1px solid; border-radius: 2em; font-family: $f-head; font-size: .62rem; letter-spacing: .08em; line-height: 1.8; vertical-align: middle; }
+.marke.spur { color: #c4efa7; border-color: rgba($potion, .8); background: rgba($potion, .12); }
+.marke.unb { color: $arcane-lt; border: 1px dashed rgba($arcane, .85); background: rgba($arcane, .1); }
+.stammvergleich.marken-aus .baum .marke { display: none; }
+
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }
 .quellen .meta { color: $muted; font-family: $f-note; font-style: italic; }

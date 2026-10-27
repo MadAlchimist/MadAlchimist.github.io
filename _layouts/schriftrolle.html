@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include blatt-symbole.html -%}
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper wrapper-breit">
+        <nav class="brotkrumen" aria-label="Pfad"><a href="{{ '/schriftrollen/' | relative_url }}">Schriftrollen</a> <span>›</span> Beitrag</nav>
+        <h1 class="post-title">{{ page.title }}</h1>
+        {%- if page.untertitel %}<p class="untertitel">{{ page.untertitel }}</p>{% endif %}
+
+        <article class="rolle post-content">
+          {{ content }}
+        </article>
+
+        <p class="zurueck"><a href="{{ '/schriftrollen/' | relative_url }}">← Alle Schriftrollen</a></p>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script src="{{ '/assets/js/staemme.js' | relative_url }}"></script>
+
+  </body>
+
+</html>

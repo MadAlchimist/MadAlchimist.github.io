@@ -1,0 +1,23 @@
+{%- comment -%}
+  Zwei Stammbaeume nebeneinander. Parameter: a, b (aus site.data.staemme), text (Einordnung unter dem Vergleich)
+{%- endcomment -%}
+<section class="stammvergleich">
+  <div class="sv-leiste">
+    <button type="button" class="pille" data-aktion="auf">Alles aufklappen</button>
+    <button type="button" class="pille" data-aktion="zu">Alles zuklappen</button>
+    <label class="sv-marken"><input type="checkbox" checked> Marker anzeigen</label>
+  </div>
+  <div class="sv-spalten">
+    <div class="baum">
+      <h4>{{ include.a.name | escape }}</h4>
+      <p class="baum-stat"></p>
+      <ul class="baum-wurzel">{% include baum-knoten.html k=include.a %}</ul>
+    </div>
+    <div class="baum">
+      <h4>{{ include.b.name | escape }}</h4>
+      <p class="baum-stat"></p>
+      <ul class="baum-wurzel">{% include baum-knoten.html k=include.b %}</ul>
+    </div>
+  </div>
+  {%- if include.text %}<p class="sv-text">{{ include.text }}</p>{% endif %}
+</section>

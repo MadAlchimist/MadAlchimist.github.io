@@ -1,0 +1,169 @@
+# Vereinfachte Stammbaeume, nachgezeichnet nach Seedfinder (seedfinder.eu), Stand Oktober 2026.
+# Es werden nur Sortennamen und Abstammung uebernommen (keine Haendler, keine Texte).
+#
+# Felder je Knoten:
+#   name        Sortenname
+#   zusatz      kleine Ergaenzung in Klammern
+#   spur        Marker fuer dokumentierte Zuchtarbeit: Cut, #-Nummer, IBL, BX ...
+#   unbekannt   true = Herkunft unbekannt
+#   ende        Landrasse/Typ am Ende eines Astes (z. B. Indica)
+#   siehe_oben  true = Wiederholung, Eltern stehen schon weiter oben
+#   mehr        true = der Stammbaum geht hier weiter (wird mit ... gekennzeichnet)
+#   eltern      Liste der Eltern (jeweils wieder ein Knoten)
+
+og_kush:
+  name: OG Kush
+  eltern:
+    - name: Unknown Strain
+      zusatz: Emerald Triangle
+      unbekannt: true
+    - name: Hindu Kush
+      ende: Indica
+
+biker_kush:
+  name: Biker Kush
+  eltern:
+    - name: Hells Angel OG
+      eltern:
+        - name: OG Kush
+          eltern:
+            - name: Unknown Strain
+              zusatz: Emerald Triangle
+              unbekannt: true
+            - name: Hindu Kush
+              ende: Indica
+        - name: Blackberry
+          eltern:
+            - name: The Black
+              zusatz: wahrscheinlich
+              eltern:
+                - name: Afghani
+                  eltern:
+                    - name: Afghanistan
+                      zusatz: wahrscheinlich Indica
+                      ende: Indica
+                - name: Mexican Landrace
+                  zusatz: Michoacán/Oaxaca
+                  ende: Sativa
+                - name: Green Vietnamese
+                  ende: Hybrid
+            - name: Afghani
+              siehe_oben: true
+    - name: Lucifer OG
+      eltern:
+        - name: Hells Angel OG
+          siehe_oben: true
+        - name: SFV OG Kush BX2
+          spur: BX2
+          eltern:
+            - name: SFV OG
+              eltern:
+                - name: OG Kush
+                  zusatz: Pheno SFV Cut, siehe oben
+                  spur: Cut
+            - name: SFV OG Kush
+              eltern:
+                - name: SFV OG
+                  siehe_oben: true
+                - name: "Afghani #1"
+                  spur: "#1"
+                  eltern:
+                    - name: Afghanistan
+                      ende: Indica
+                    - name: Afghanistan
+                      ende: Indica
+
+northern_lights:
+  name: Northern Lights
+  eltern:
+    - name: Purest Indica
+      eltern:
+        - name: Afghani
+          eltern:
+            - name: Afghanistan
+              zusatz: wahrscheinlich Indica
+              ende: Indica
+
+nl5_bx:
+  name: 89 NL5 BX
+  spur: BX
+  eltern:
+    - name: "Northern Lights #5"
+      spur: "#5"
+      eltern:
+        - name: Purest Indica
+          eltern:
+            - name: Afghani
+              eltern:
+                - name: Afghanistan
+                  zusatz: wahrscheinlich Indica
+                  ende: Indica
+        - name: Hawaiian
+          ende: Sativa
+    - name: "Northern Lights #5 × Unknown Strain"
+      eltern:
+        - name: "Northern Lights #5"
+          spur: "#5"
+          siehe_oben: true
+        - name: Unknown Strain
+          unbekannt: true
+
+sour_diesel:
+  name: Sour Diesel
+  eltern:
+    - name: Diesel
+      eltern:
+        - name: Unknown Diesel Bagseed
+          unbekannt: true
+          ende: Unknown Strain
+        - name: Afghani/Hawaiian
+          eltern:
+            - name: Afghani
+              eltern:
+                - name: Afghanistan
+                  zusatz: wahrscheinlich Indica
+                  ende: Indica
+            - name: Hawaii
+              unbekannt: true
+              ende: Unknown Hybrid
+    - name: Northern Lights
+      eltern:
+        - name: Purest Indica
+          eltern:
+            - name: Afghani
+              siehe_oben: true
+
+sour_diesel_bx:
+  name: Sour Diesel BX2
+  spur: BX2
+  eltern:
+    - name: Sour Diesel IBL
+      spur: IBL
+      eltern:
+        - name: Sour Diesel
+          eltern:
+            - name: Original Diesel
+              eltern:
+                - name: Chemdawg
+                  unbekannt: true
+                  ende: Unknown Hybrid
+                - name: MassSuperSkunk × SensiNL
+                  eltern:
+                    - name: MassSuperSkunk
+                      mehr: true
+                    - name: SensiNL
+                      eltern:
+                        - name: "NL #1"
+                          spur: IBL
+                          mehr: true
+                        - name: "NL #2"
+                          siehe_oben: true
+                        - name: "NL #5"
+                          spur: "#5"
+                          mehr: true
+            - name: DNL
+              mehr: true
+        - name: Double Sour Diesel
+          mehr: true
+    - name: Biker Kush
+      mehr: true
