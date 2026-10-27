@@ -4,6 +4,8 @@
 # Felder je Knoten:
 #   name        Sortenname
 #   zusatz      kleine Ergaenzung in Klammern
+#   quelle      Breeder bzw. Quelle der Linie (bei Seedfinder in eckigen Klammern),
+#               hier anonymisiert: Breeder A, Breeder B ... (gleicher Buchstabe = gleicher Breeder)
 #   spur        Marker fuer dokumentierte Zuchtarbeit: Cut, #-Nummer, IBL, BX ...
 #   unbekannt   true = Herkunft unbekannt
 #   ende        Landrasse/Typ am Ende eines Astes (z. B. Indica)
@@ -18,6 +20,7 @@ og_kush:
       zusatz: Emerald Triangle
       unbekannt: true
     - name: Hindu Kush
+      quelle: Breeder A
       ende: Indica
 
 biker_kush:
@@ -31,8 +34,10 @@ biker_kush:
               zusatz: Emerald Triangle
               unbekannt: true
             - name: Hindu Kush
+              quelle: Breeder A
               ende: Indica
         - name: Blackberry
+          quelle: Breeder B
           eltern:
             - name: The Black
               zusatz: wahrscheinlich

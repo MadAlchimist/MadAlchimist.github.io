@@ -1,4 +1,5 @@
 <span class="kn-zeile"><span class="kn-name">{{ include.k.name | escape }}</span>
+{%- if include.k.quelle %} <span class="kn-quelle" title="Breeder bzw. Quelle der Linie (anonymisiert)">[{{ include.k.quelle | escape }}]</span>{% endif -%}
 {%- if include.k.zusatz %} <span class="kn-zusatz">({{ include.k.zusatz | escape }})</span>{% endif -%}
 {%- if include.k.spur %} <span class="marke spur" title="Spur dokumentierter Zuchtarbeit">{{ include.k.spur | escape }}</span>{% endif -%}
 {%- if include.k.unbekannt %} <span class="marke unb" title="Herkunft unbekannt">Unknown</span>{% endif -%}

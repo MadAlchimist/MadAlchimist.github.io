@@ -49,7 +49,7 @@ bieten Anhaltspunkte und Nachverfolgbarkeit.
 Bei szenebekannten Breedern sieht der Stammbaum oft sehr detailliert aus. Sorten
 tragen oft ein „#5“ oder das Wort „Cut“ in der Beschreibung. Die Nummern stehen
 für Phänotypen und sind daher bereits ein Indikator für dokumentierte
-Zuchtarbeit. Bei „…-Cut“ ist der erste Name oft der gebende Breeder. Diese
+Zuchtarbeit. Bei Namen wie „Breeder A – OG Cut“ ist der erste Name oft der gebende Breeder. Diese
 Honorierung ist ebenfalls ein Indikator für gut dokumentierte Zuchtarbeit.
 
 Bei Whitelabel- und Bulk-Seeds steht dagegen oft sofort „Unknown“ im Stammbaum
@@ -67,7 +67,10 @@ Links jeweils ein kurzer Stammbaum, rechts ein Stammbaum mit dokumentierten
 Zuchtschritten. Äste lassen sich auf- und zuklappen. Die Marker zeigen
 <span class="marke spur">Cut · #5 · IBL · BX</span> als Spuren dokumentierter
 Zuchtarbeit und <span class="marke unb">Unknown</span> als unbekannte Herkunft
-(Erklärungen im [Glossar]({{ '/bibliothek/#glossar' | relative_url }})).
+(Erklärungen im [Glossar]({{ '/bibliothek/#glossar' | relative_url }})). In
+eckigen Klammern steht wie bei Seedfinder, von welchem Breeder eine Linie
+stammt, hier anonymisiert als <span class="kn-quelle">[Breeder A]</span>:
+derselbe Buchstabe steht für denselben Breeder.
 
 ### OG Kush
 

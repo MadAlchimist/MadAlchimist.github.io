@@ -546,6 +546,7 @@ code {
 .baum details:not([open]) > summary::before { content: "▸"; }
 .post-content .baum ul:not(.karten) > li.kn-blatt::before { content: "•"; position: static; display: inline-block; width: 1.15em; font-size: 1em; text-shadow: none; color: $gold-dim; }
 .baum .kn-name { color: $parchment; }
+.baum .kn-quelle { margin-left: .3em; font-size: .9em; color: $gold; }
 .baum .kn-zusatz, .baum .kn-siehe { margin-left: .3em; font-size: .88em; color: $muted; }
 .baum .kn-ende { margin-left: .4em; font-size: .9em; font-style: italic; color: $muted; }
 .baum .kn-mehr { margin-left: .3em; color: $gold; letter-spacing: .15em; }
