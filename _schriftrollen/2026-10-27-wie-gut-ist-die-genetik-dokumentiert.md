@@ -6,9 +6,9 @@ thema: Genetik
 datum: 2026-10-27   # nur zum Sortieren
 ---
 In der Welt der Seeds spalten sich die Hersteller in zwei grobe Lager, wobei es
-Überschneidungen zwischen beiden gibt. Da wären die großen, Marketing nutzenden
-Anbieter, bei denen man fast jeden Strain immer als Autoflowering und
-feminisiert bekommt. Und dann gibt es die Breeder, die echte Züchterarbeit
+Überschneidungen zwischen beiden gibt. Da wären die großen, stark
+marketinggetriebenen Anbieter, bei denen man fast jede bekannte Sorte sowohl
+als Autoflowering als auch feminisiert bekommt. Und dann gibt es die Breeder, die echte Züchterarbeit
 leisten. Sie legen Wert auf die Nachverfolgbarkeit der Stammbäume und auf
 Stabilität innerhalb der Linie bzw. Sorte. Hier gibt es Sorten oft nicht als
 Autoflowering, sondern nur feminisiert und/oder teils sogar nur als reguläre

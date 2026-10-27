@@ -8,9 +8,10 @@ layout: default
   <p>Fehler, Funde und Formeln – von handschriftlichen Notizen zu Canalyze.</p>
 </section>
 
-<div class="tafeln">
-  <a class="tafel" href="{{ '/funde/' | relative_url }}"><strong>Funde, Fehlschläge &amp; Skurriles</strong><span>Was schiefging, was glänzte und was einfach skurril war.</span></a>
-  <a class="tafel" href="{{ '/bibliothek/' | relative_url }}"><strong>Bibliothek</strong><span>Genetik, Glossar, Selektion und Nährstoffe.</span></a>
+<div class="tafeln start">
+  <a class="tafel" href="{{ '/funde/' | relative_url }}"><strong>Funde, Fehlschläge &amp; Skurriles</strong><span>Kurze Fälle mit Foto: was schiefging, was glänzte und was einfach skurril war.</span></a>
+  <a class="tafel" href="{{ '/bibliothek/' | relative_url }}"><strong>Bibliothek</strong><span>Zum Nachschlagen: Genetik, Glossar, Selektion und Nährstoffe.</span></a>
+  <a class="tafel" href="{{ '/schriftrollen/' | relative_url }}"><strong>Schriftrollen</strong><span>Längere Beiträge zu Genetik und Zucht, mit interaktiven Stammbäumen.</span></a>
   <a class="tafel" href="{{ '/labor/' | relative_url }}"><strong>Labor</strong><span>Mein Setup und wer hier experimentiert.</span></a>
   <a class="tafel" href="{{ '/aktueller-grow/' | relative_url }}"><strong>Aktueller Grow</strong><span>Live aus Canalyze, meinem Analyse-Tool.</span></a>
 </div>

@@ -164,6 +164,16 @@ ul { list-style: none; margin-left: 0; }
 .zierlinie .blatt { width: 52px; height: auto; color: $gold; filter: drop-shadow(0 0 6px rgba($potion, .45)); }
 
 .tafeln { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.1rem; margin: 1rem 0 2.5rem; }
+// Startseite: drei Kacheln oben, zwei darunter (gleich breit pro Reihe)
+.tafeln.start { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.tafeln.start .tafel { grid-column: span 2; }
+.tafeln.start .tafel:nth-child(n+4) { grid-column: span 3; }
+@media screen and (max-width: 640px) {
+  .tafeln.start { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tafeln.start .tafel, .tafeln.start .tafel:nth-child(n+4) { grid-column: span 1; }
+  .tafeln.start .tafel:last-child { grid-column: 1 / -1; }
+  .tafeln.start .tafel strong { font-size: .9rem; letter-spacing: .05em; }   // 'Schriftrollen' passt sonst knapp nicht in die Kachel
+}
 .tafel {
   display: block; padding: 1.4rem 1.3rem; color: $parchment; border: 1px solid $gold-dim;
   // Nieten in den Ecken + dunkle Messingtafel

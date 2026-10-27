@@ -10,8 +10,8 @@ show_excerpts: true
 header_pages:
   - funde.md
   - bibliothek.md
-  - labor.md
   - schriftrollen.md
+  - labor.md
   - canalyze.md
   - aktueller-grow.md
 
