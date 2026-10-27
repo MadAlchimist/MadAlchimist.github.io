@@ -15,7 +15,7 @@ layout: default
   <a class="tafel" href="{{ '/aktueller-grow/' | relative_url }}"><strong>Aktueller Grow</strong><span>Live aus Canalyze, meinem Analyse-Tool.</span></a>
 </div>
 
-<div class="zierlinie">{% include cog.html %}</div>
+<div class="zierlinie">{% include blatt.html %}</div>
 
 <h2>Aus der Werkstatt</h2>
 

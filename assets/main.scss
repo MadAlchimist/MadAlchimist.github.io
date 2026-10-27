@@ -112,7 +112,6 @@ ul { list-style: none; margin-left: 0; }
 @keyframes drehen { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: no-preference) {
   .hero-cog .cog { animation: drehen 150s linear infinite; }
-  .zierlinie .cog { animation: drehen 40s linear infinite; }
 }
 
 // ---- Seitendeko: Kolben mit Gebraeu und Dampf in den Raendern (nur auf breiten Schirmen) --
@@ -162,7 +161,7 @@ ul { list-style: none; margin-left: 0; }
 .zierlinie { display: flex; align-items: center; gap: .9em; color: $gold; margin: 1.8rem auto; max-width: 440px; }
 .zierlinie::before, .zierlinie::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, $gold-dim 60%, $arcane); }
 .zierlinie::after { transform: scaleX(-1); }
-.zierlinie .cog { width: 28px; height: 28px; }
+.zierlinie .blatt { width: 52px; height: auto; color: $gold; filter: drop-shadow(0 0 6px rgba($potion, .45)); }
 
 .tafeln { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.1rem; margin: 1rem 0 2.5rem; }
 .tafel {
