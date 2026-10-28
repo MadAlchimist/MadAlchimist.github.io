@@ -1,0 +1,29 @@
+{%- comment -%} Kleine Laborglaeser fuer das Menue (form 1-6). Gleiche Gestalt wie der Kolben im Logo: Gold-Kontur, Fluessigkeit unten. {%- endcomment -%}
+{%- assign f = include.form | default: 1 -%}
+<svg class="glas" viewBox="0 0 24 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  {%- if f == 1 -%}
+  <clipPath id="glas-1"><path d="M9 3v20a3 3 0 0 0 6 0V3Z"/></clipPath>
+  <rect x="0" y="14" width="24" height="16" fill="#7ccf4f" clip-path="url(#glas-1)"/>
+  <path d="M7.5 3h9M9 3v20a3 3 0 0 0 6 0V3" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- elsif f == 2 -%}
+  <clipPath id="glas-2"><path d="M10 3v6.2a8 8 0 1 0 4 0V3Z"/></clipPath>
+  <rect x="0" y="17" width="24" height="14" fill="#a06cff" clip-path="url(#glas-2)"/>
+  <path d="M8.5 3h7M10 3v6.2a8 8 0 1 0 4 0V3" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- elsif f == 3 -%}
+  <clipPath id="glas-3"><path d="M10 7v3l-4 5v8a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-8l-4-5V7Z"/></clipPath>
+  <rect x="0" y="18" width="24" height="14" fill="#e8c46a" clip-path="url(#glas-3)"/>
+  <path d="M9 4h6M10 7v3l-4 5v8a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-8l-4-5V7" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- elsif f == 4 -%}
+  <clipPath id="glas-4"><path d="M5 5h14v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z"/></clipPath>
+  <rect x="0" y="14" width="24" height="16" fill="#7ccf4f" clip-path="url(#glas-4)"/>
+  <path d="M3.5 5h15.5M5 5v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- elsif f == 5 -%}
+  <clipPath id="glas-5"><path d="M8.5 3v19h7V3Z"/></clipPath>
+  <rect x="0" y="10" width="24" height="20" fill="#a06cff" clip-path="url(#glas-5)"/>
+  <path d="M7 3h10M8.5 3v19h7V3M5 26h14M12 22v4" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- else -%}
+  <clipPath id="glas-6"><path d="M10.5 3v5.5c-3 1.5-5 4.7-5 8.2 0 4 2.7 7.3 6.5 7.3s6.5-3.3 6.5-7.3c0-3.5-2-6.7-5-8.2V3Z"/></clipPath>
+  <rect x="0" y="16" width="24" height="14" fill="#e8c46a" clip-path="url(#glas-6)"/>
+  <path d="M9 3h6M10.5 3v5.5c-3 1.500-5 4.700-5 8.200 0 4 2.700 7.300 6.500 7.300s6.500-3.3 6.5-7.3c0-3.5-2-6.7-5-8.2V3" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- endif -%}
+</svg>

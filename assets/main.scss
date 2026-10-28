@@ -30,13 +30,13 @@ $f-display: "Cinzel Decorative", "Metamorphous", Georgia, serif;   // grosse Tit
 $f-head:    "Metamorphous", Georgia, serif;                        // Ueberschriften, Menue, Etiketten
 $f-note:    "IM Fell English", "EB Garamond", Georgia, serif;      // Bildtexte, Hinweise
 
-@font-face { font-family: "Cinzel Decorative"; font-weight: 700; font-display: swap; src: url("fonts/cinzel-decorative-latin-700-normal.woff2") format("woff2"); }
-@font-face { font-family: "Cinzel Decorative"; font-weight: 900; font-display: swap; src: url("fonts/cinzel-decorative-latin-900-normal.woff2") format("woff2"); }
-@font-face { font-family: "Metamorphous"; font-weight: 400; font-display: swap; src: url("fonts/metamorphous-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "IM Fell English"; font-weight: 400; font-style: italic; font-display: swap; src: url("fonts/im-fell-english-latin-400-italic.woff2") format("woff2"); }
-@font-face { font-family: "EB Garamond"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/eb-garamond-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "EB Garamond"; font-weight: 400; font-style: italic; font-display: swap; src: url("fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); }
-@font-face { font-family: "EB Garamond"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/eb-garamond-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Cinzel Decorative"; font-weight: 700; font-display: block; src: url("fonts/cinzel-decorative-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Cinzel Decorative"; font-weight: 900; font-display: block; src: url("fonts/cinzel-decorative-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family: "Metamorphous"; font-weight: 400; font-display: block; src: url("fonts/metamorphous-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "IM Fell English"; font-weight: 400; font-style: italic; font-display: block; src: url("fonts/im-fell-english-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-weight: 400; font-style: normal; font-display: block; src: url("fonts/eb-garamond-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-weight: 400; font-style: italic; font-display: block; src: url("fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-weight: 600; font-style: normal; font-display: block; src: url("fonts/eb-garamond-latin-600-normal.woff2") format("woff2"); }
 
 @import "minima";
 
@@ -98,6 +98,8 @@ ul { list-style: none; margin-left: 0; }
   margin-left: 1em; border: 0; color: $parchment; text-transform: uppercase;
   font-size: .72rem; letter-spacing: .06em; padding-bottom: 4px; white-space: nowrap;
 }
+.site-nav .page-link { display: inline-flex; align-items: center; gap: .45em; }
+.site-nav .glas { width: 17px; height: 21px; flex: none; filter: drop-shadow(0 0 4px rgba($arcane, .4)); }
 .site-nav .page-link:hover { color: $arcane-lt; border-bottom: 1px solid $arcane; }
 @media screen and (max-width: 600px) {
   .site-nav { background: $panel; border-color: $gold-dim; top: 18px; z-index: 30; } // ueber der goldenen Kopflinie
@@ -543,3 +545,20 @@ button.knopf { cursor: pointer; font-size: .8rem; }
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }
 .quellen .meta { color: $muted; font-family: $f-note; font-style: italic; }
+
+html { scrollbar-gutter: stable; }   // Scrollbalken-Platz immer reservieren, damit die Seite nie seitlich springt
+
+// ---- Heim-Animation: Klick auf den Seitentitel (assets/js/heim-fx.js) -----------------------------------
+.heim-ebene { position: fixed; inset: 0; z-index: 9999; pointer-events: none; overflow: hidden; }
+.heim-blase { position: absolute; width: var(--z); height: var(--z); margin: calc(var(--z) / -2) 0 0 calc(var(--z) / -2); border-radius: 50%; background: var(--c); opacity: 0; }
+@keyframes heim-kippen { 0% { transform: translateY(0) rotate(0); } 35% { transform: translateY(-7px) rotate(0); } 100% { transform: translateY(-7px) rotate(110deg); } }
+@keyframes heim-tropfen { 0% { opacity: 0; transform: translate(0, 0) scale(.6); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1); } }
+@keyframes heim-steig { 0% { opacity: 0; transform: translate(0, 0) scale(.3); } 14% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.5); } }
+@keyframes heim-weg { 0% { opacity: 1; transform: scale(1); filter: blur(0); } 100% { opacity: 0; transform: scale(.96) translateY(-14px); filter: blur(6px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .logo, .glas { transform-origin: 50% 70%; }
+  .heim-kippen { animation: heim-kippen .7s ease-in-out forwards; position: relative; z-index: 10000; }
+  .heim-tropfen { animation: heim-tropfen var(--dur) ease-in var(--del) both; }
+  .heim-steig { animation: heim-steig var(--dur) cubic-bezier(.2, .6, .3, 1) var(--del) both; }
+  .heim-weg .page-content .wrapper, .heim-weg .seitendeko, .heim-weg .site-footer, .heim-weg .site-nav { animation: heim-weg 1.2s ease-in forwards; }
+}
