@@ -232,47 +232,15 @@ ul { list-style: none; margin-left: 0; }
   position: absolute; width: var(--z); height: var(--z); margin: calc(var(--z) / -2) 0 0 calc(var(--z) / -2); border-radius: 50%; opacity: 0;
   background: var(--c);   // flach, ohne Glanz und Leuchten
 }
-.fx-tropfen {
-  position: absolute; top: 100%; width: 8px; height: 0; margin-left: -4px; opacity: 0;
-  background: linear-gradient(180deg, #c4513a, #e0604a); border-radius: 0 0 5px 5px; box-shadow: 0 0 8px rgba(196, 81, 58, .6);
-}
 
 @keyframes fx-schweb { 0% { opacity: 0; transform: translate(0, 0) scale(.5); } 18% { opacity: .95; } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.1); } }
 @keyframes fx-platz  { 0% { opacity: 0; transform: translate(0, 0) scale(.3); } 14% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.6); } }
 @keyframes fx-aufloesen { 0% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); } 100% { opacity: 0; transform: scale(.92); filter: blur(4px) brightness(1.5); } }
-@keyframes fx-puls { 0%, 100% { box-shadow: 0 0 10px rgba(124, 207, 79, .22); } 50% { box-shadow: 0 0 30px 5px rgba(124, 207, 79, .55); } }
-@keyframes fx-maske { from { -webkit-mask-size: 260% 260%; mask-size: 260% 260%; } to { -webkit-mask-size: 0% 0%; mask-size: 0% 0%; } }
-@keyframes fx-ring  { from { background-size: 260% 260%; opacity: 1; } 85% { opacity: 1; } to { background-size: 0% 0%; opacity: 0; } }
-@keyframes fx-glut  { 0% { box-shadow: 0 0 0 rgba(185, 240, 143, 0); } 40% { box-shadow: 0 0 34px 6px rgba(150, 230, 100, .65); } 100% { box-shadow: 0 0 60px 14px rgba(150, 230, 100, 0); } }
-@keyframes fx-tropf { 0% { opacity: 0; height: 0; transform: translateY(-2px); } 18% { opacity: 1; } 62% { opacity: 1; height: var(--len); transform: translateY(0); } 100% { opacity: 0; height: var(--len); transform: translateY(30px); } }
-@keyframes fx-zerlauf {
-  0%   { opacity: 1; transform: translateY(0) scaleY(1); filter: none; }
-  35%  { opacity: 1; transform: translateY(8px) scaleY(1.04); filter: sepia(1) saturate(5) hue-rotate(-35deg) brightness(.85); }
-  100% { opacity: 0; transform: translateY(var(--d)) scaleY(var(--s)); filter: sepia(1) saturate(6) hue-rotate(-35deg) brightness(.55) blur(2px); }
-}
-
-.fx-ring {
-  position: absolute; inset: 0; border-radius: 4px; background-repeat: no-repeat; background-position: center; background-size: 260% 260%;
-  background-image: radial-gradient(ellipse closest-side, rgba(185, 240, 143, 0) 56%, rgba(205, 255, 170, .95) 74%, rgba(124, 207, 79, .65) 87%, rgba(124, 207, 79, 0) 99%);
-  animation: fx-ring .95s ease-in forwards;
-}
-.fx-schmelz { position: absolute; inset: 0; filter: url(#goo); }   // Goo-Filter rundet die Streifen zu Tropfen ab
-.fx-streifen { position: absolute !important; left: 0; top: 0; margin: 0 !important; transform-origin: 50% 0; animation: fx-zerlauf 1s ease-in var(--del) both; pointer-events: none; transform: translateY(-3px); }
 
 @media (prefers-reduced-motion: no-preference) {
   .fx-schweb { animation: fx-schweb var(--dur) ease-out var(--del) infinite; }
   .fx-platz  { animation: fx-platz var(--dur) cubic-bezier(.2, .6, .3, 1) var(--del) both; }
-  .fx-tropfen { animation: fx-tropf var(--dur) ease-in var(--del) infinite; }
   .karten-fx .karte a.fx-aufloesen { animation: fx-aufloesen .8s ease-in forwards; }
-  .karten-fx .karte a.fx-leuchten {
-    -webkit-mask-image: radial-gradient(ellipse closest-side, #000 58%, rgba(0, 0, 0, 0) 98%); mask-image: radial-gradient(ellipse closest-side, #000 58%, rgba(0, 0, 0, 0) 98%);
-    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;
-    -webkit-mask-size: 260% 260%; mask-size: 260% 260%;
-    animation: fx-maske .95s ease-in forwards, fx-glut .95s ease-out forwards;
-  }
-}
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .karten-fx .karte[data-typ="highlight"] a:hover { animation: fx-puls 1.8s ease-in-out infinite; }
 }
 
 .filter { margin: 1rem 0; }
