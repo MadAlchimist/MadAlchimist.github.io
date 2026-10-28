@@ -218,6 +218,13 @@ ul { list-style: none; margin-left: 0; }
 .karte .meta, .fall-meta { color: $muted; font-family: $f-note; font-size: .95rem; font-style: italic; }
 // ---- Karten-Effekte auf Funde, Fehlschlaege & Skurriles (assets/js/karten-fx.js) ----------------------------
 .karten-fx .karte { position: relative; }
+// Hover-Farbe passend zum Effekt: Skurril gold, Highlight gruen, Fehler rot (nur in dieser Rubrik)
+.karten-fx .karte[data-typ="skurril"] a:hover   { border-color: lighten($gold, 6%); box-shadow: 0 10px 30px rgba(0, 0, 0, .55), 0 0 26px rgba($gold, .38); }
+.karten-fx .karte[data-typ="skurril"] a:hover h3   { color: lighten($gold, 20%); }
+.karten-fx .karte[data-typ="highlight"] a:hover { border-color: $potion; box-shadow: 0 10px 30px rgba(0, 0, 0, .55), 0 0 26px rgba($potion, .35); }
+.karten-fx .karte[data-typ="highlight"] a:hover h3 { color: #c4efa7; }
+.karten-fx .karte[data-typ="fehler"] a:hover    { border-color: lighten($blood, 8%); box-shadow: 0 10px 30px rgba(0, 0, 0, .55), 0 0 26px rgba($blood, .4); }
+.karten-fx .karte[data-typ="fehler"] a:hover h3    { color: #f0b3a5; }
 .fx { position: absolute; inset: 0; z-index: 6; pointer-events: none; transition: opacity .3s; }
 .fx.weg { opacity: 0; }
 
