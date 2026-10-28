@@ -62,4 +62,19 @@ an.
 
 Die vollständige Anleitung gibt es im Handbuch.
 
-<p class="handbuch-link"><a class="knopf" href="{{ '/canalyze/handbuch/' | relative_url }}">Zum Handbuch →</a></p>
+<div class="canalyze-aktionen">
+  <a class="knopf" href="{{ '/canalyze/handbuch/' | relative_url }}">Zum Handbuch →</a>
+  <button type="button" class="knopf leise" id="kontakt-knopf" aria-expanded="false" aria-controls="kontakt-box">Kontakt aufnehmen</button>
+</div>
+
+<div class="kontakt-box" id="kontakt-box" hidden>
+  <p>Bei Interesse am Projekt Canalyze und Mad Alchimist könnt ihr mich über diese Mail-Adresse anonym kontaktieren. Ein Nickname oder Alias reicht.</p>
+  <p class="kontakt-zeile">
+    <a id="kontakt-adresse" href="#" data-a="{{ site.data.kontakt.adresse | split: '' | reverse | join: '' }}"></a>
+    <button type="button" class="pille" id="kontakt-kopieren">Kopieren</button>
+    <span id="kontakt-ok" class="kontakt-ok" aria-live="polite"></span>
+  </p>
+</div>
+<noscript><p>Für die Kontaktadresse wird JavaScript benötigt.</p></noscript>
+
+<script src="{{ '/assets/js/kontakt.js' | relative_url }}"></script>

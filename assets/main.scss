@@ -424,6 +424,15 @@ code {
 }
 .knopf:hover { background: $arcane; border-color: $arcane; color: #fff; box-shadow: 0 0 22px rgba($arcane, .5); text-shadow: none; }
 .handbuch-link { margin: 1.4rem 0 2rem; }
+.canalyze-aktionen { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin: 1.4rem 0 1rem; }
+button.knopf { cursor: pointer; font-size: .8rem; }
+.knopf.leise, .knopf.leise:visited { color: $gold; background: transparent; }
+.knopf.leise:hover, .knopf.leise[aria-expanded="true"] { color: #fff; background: $arcane; border-color: $arcane; box-shadow: 0 0 22px rgba($arcane, .5); }
+.kontakt-box { max-width: 40rem; margin: 0 0 2rem; padding: 1rem 1.3rem; border: 1px solid $gold-dim; border-left: 3px solid $arcane; border-radius: 3px; background: rgba($panel, .85); }
+.kontakt-box p { margin: 0 0 .7rem; }
+.kontakt-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin-bottom: 0 !important; }
+.kontakt-zeile a { font-family: Consolas, "Courier New", monospace; font-size: .95rem; color: $arcane-lt; word-break: break-all; }
+.kontakt-ok { color: $potion; font-size: .9rem; }
 
 .canalyze-banner {
   display: grid; grid-template-columns: 1fr 1.25fr; gap: 1.6rem; align-items: center; margin: 1rem 0 2.5rem; padding: 1.4rem;
