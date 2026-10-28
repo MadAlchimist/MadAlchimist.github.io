@@ -240,7 +240,7 @@ ul { list-style: none; margin-left: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .fx-schweb { animation: fx-schweb var(--dur) ease-out var(--del) infinite; }
   .fx-platz  { animation: fx-platz var(--dur) cubic-bezier(.2, .6, .3, 1) var(--del) both; }
-  .karten-fx .karte a.fx-aufloesen { animation: fx-aufloesen .8s ease-in forwards; }
+  .karten-fx .karte a.fx-aufloesen, .tafeln.start a.tafel.fx-aufloesen { animation: fx-aufloesen .8s ease-in forwards; }
 }
 
 .filter { margin: 1rem 0; }

@@ -15,6 +15,7 @@ layout: default
   <a class="tafel" href="{{ '/labor/' | relative_url }}"><strong>Labor</strong><span>Mein Setup und wer hier experimentiert.</span></a>
   <a class="tafel" href="{{ '/aktueller-grow/' | relative_url }}"><strong>Aktueller Grow</strong><span>Live aus Canalyze, meinem Analyse-Tool.</span></a>
 </div>
+<script src="{{ '/assets/js/karten-fx.js' | relative_url }}"></script>
 
 <div class="zierlinie">{% include blatt.html %}</div>
 
