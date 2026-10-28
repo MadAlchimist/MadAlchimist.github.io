@@ -6,7 +6,7 @@ permalink: /canalyze/
 
 Seit diesem Sommer dokumentiere ich meine Grows nicht mehr in Excel,
 sondern in einem Tool, das ich selbst gebaut habe: **Canalyze**. Es läuft
-komplett lokal auf meinem PC, läuft ohne Cloud-Zwang und wächst seit Monaten
+komplett lokal auf meinem PC, kommt ohne Cloud-Zwang aus und wächst seit Monaten
 weiter.
 
 ## Dashboard – Überblick auf einen Blick

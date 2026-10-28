@@ -16,7 +16,7 @@ fotos:
 ---
 ## Highlight
 
-Eigens produzierte F2 Seeds der Sour Silverback von Karma. Eine Kreuzung der legendären Gorilla Glue #4 (Josey Whales) und Karmas Sour Diesel Bx2.
+Eigens produzierte F2 Seeds der Sour Silverback von Karma. Eine Kreuzung der legendären Gorilla Glue #4 (Josey Wales) und Karmas Sour Diesel Bx2.
 
 ## Was dahinter steckt
 

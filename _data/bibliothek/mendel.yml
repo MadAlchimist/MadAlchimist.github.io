@@ -1,17 +1,21 @@
 # Mendel und Selektionsmerkmale (Quelle: Excel-Blatt Mendel).
 stufen:
 - stufe: P (Parental)
-  kreuzung: Reinerbige Eltern
-  regel: 1. Uniformitätsregel
-  fokus: Beobachte, wie "stark" bestimmte Merkmale (z.B. das Blattmuster der Blueberry) im Vergleich zum Vater sind.
+  kreuzung: Reinerbige Eltern (P1, P2)
+  regel: Ausgangslinien
+  fokus: Lerne die Elternlinien genau kennen und notiere ihre Merkmale – sie sind der Maßstab für alles Weitere.
 - stufe: F1 (Filial 1)
+  kreuzung: P1 x P2
+  regel: 1. Uniformitätsregel
+  fokus: Beobachte die Dominanz – welche Merkmale der Eltern (z.B. das Blattmuster der Blueberry) setzen sich in der uniformen F1 durch?
+- stufe: F2 (Filial 2)
   kreuzung: F1 x F1 (Sib-Mating)
   regel: 2. Spaltungsregel
   fokus: Hier lernst du die Selektion. In der F2 wirst du die größte Varianz sehen – ideal, um das Auge für Details zu schulen.
-- stufe: F2 (Filial 2)
-  kreuzung: F2 x F2
+- stufe: F2 / F3 (mehrere Merkmale)
+  kreuzung: Betrachtung mehrerer Merkmale in der F2
   regel: 3. Unabhängigkeitsregel
-  fokus: Hier lernst du, wie sich Merkmale (z.B. Aroma vs. Blütezeit) neu kombinieren.
+  fokus: Hier lernst du, wie sich verschiedene Merkmale (z.B. Aroma vs. Blütezeit) unabhängig voneinander neu kombinieren.
 - stufe: BX (Backcross)
   kreuzung: F1 x P1
   regel: Rückkreuzung
