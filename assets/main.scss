@@ -95,12 +95,12 @@ ul { list-style: none; margin-left: 0; }
 .logo { width: 38px; height: 38px; flex: none; filter: drop-shadow(0 0 7px rgba($potion, .5)) drop-shadow(0 0 10px rgba($arcane, .35)); }
 .site-nav { float: none; line-height: 1; }
 .site-nav .page-link {
-  margin-left: 1em; border: 0; color: $parchment; text-transform: uppercase;
+  margin-left: 1em; border: 0; border-bottom: 1px solid transparent; color: $parchment; text-transform: uppercase;
   font-size: .72rem; letter-spacing: .06em; padding-bottom: 4px; white-space: nowrap;
 }
 .site-nav .page-link { display: inline-flex; align-items: center; gap: .45em; }
 .site-nav .glas { width: 17px; height: 21px; flex: none; filter: drop-shadow(0 0 4px rgba($arcane, .4)); }
-.site-nav .page-link:hover { color: $arcane-lt; border-bottom: 1px solid $arcane; }
+.site-nav .page-link:hover { color: $arcane-lt; border-bottom-color: $arcane; }
 @media screen and (max-width: 600px) {
   .site-nav { background: $panel; border-color: $gold-dim; top: 18px; z-index: 30; } // ueber der goldenen Kopflinie
   .site-nav .page-link { margin: 0; display: block; padding: .6em 1em; }

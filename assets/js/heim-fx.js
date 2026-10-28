@@ -22,6 +22,7 @@
 
   function spielen(href, glas) {
     logo = glas;
+    var fl = glas.querySelector('rect'), saft = fl ? fl.getAttribute('fill') : '#7ccf4f';   // Farbe der Fluessigkeit im Glas
     var r = logo.getBoundingClientRect();
     var mundX = r.left + r.width * 0.92, mundY = r.top + r.height * 0.8;   // Kolbenmuendung nach dem Kippen (ungefaehr)
     var ebene = document.createElement('div'), i;
@@ -38,7 +39,7 @@
       for (i = 0; i < 26; i++) {
         blase(ebene, 'heim-tropfen', {
           left: (mundX + rnd(-3, 3)).toFixed(0) + 'px', top: (mundY + rnd(-2, 2)).toFixed(0) + 'px',
-          '--z': rnd(5, 10).toFixed(1) + 'px', '--c': wahl(FARBEN.slice(0, 3)),
+          '--z': rnd(5, 10).toFixed(1) + 'px', '--c': saft,
           '--dx': rnd(8, 30).toFixed(0) + 'px', '--dy': rnd(90, 190).toFixed(0) + 'px',
           '--dur': rnd(.5, .8).toFixed(2) + 's', '--del': (i * 0.03).toFixed(2) + 's'
         });
