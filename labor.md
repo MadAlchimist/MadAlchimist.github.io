@@ -6,7 +6,7 @@ permalink: /labor/
 
 ## Der Alchimist hinter dem Kessel
 
-Seit über sechs Jahren widme ich mich der Kunst und Wissenschaft der
+Seit geraumer Zeit widme ich mich der Kunst und Wissenschaft der
 Indoor-Kultivierung. Was einst mit einfachen Autoflowering-Samen und günstigen
 Bulk-Breedern als erstes Herantasten begann, hat sich längst zu einer
 tiefgehenden Faszination für saubere Genetik, Terpenprofile und empirische
