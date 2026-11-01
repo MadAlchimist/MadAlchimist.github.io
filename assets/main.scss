@@ -515,6 +515,7 @@ button.knopf { cursor: pointer; font-size: .8rem; }
 .technik-kasten li { margin: .25rem 0; }
 .merksatz { max-width: 46rem; margin: 1.4rem 0; padding: .8rem 1.2rem; font-family: $f-head; font-size: 1.25rem; letter-spacing: .03em; color: $gold; text-align: center; border-top: 1px solid $gold-dim; border-bottom: 1px solid $gold-dim; text-shadow: 0 0 18px rgba($gold, .3); }
 .rolle .galerie { max-width: 100%; }
+.rolle .galerie-breit figure { max-width: 640px; flex-basis: 420px; }
 .rolle > .kapitel-nav { max-width: 46rem; margin: 0 0 1.4rem; }
 .stammvergleich { margin: 1.2rem 0 2.6rem; }
 .sv-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-bottom: 1rem; }

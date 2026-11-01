@@ -153,6 +153,10 @@ Eigentlich wollte ich bestäuben wie die Profis: mit dem Pinsel, Blüte für Bl�
     <a href="{{ '/assets/schriftrollen/regulaeres-saatgut/13-kapseln-aufgereiht.jpg' | relative_url }}"><img src="{{ '/assets/schriftrollen/regulaeres-saatgut/13-kapseln-aufgereiht.jpg' | relative_url }}" alt="Ein Blütenstand des Männchens mit hängenden Kapseln, genannt Banane" loading="lazy"></a>
     <figcaption>Eine „Banane“ in ihrer vollen Pracht :D</figcaption>
   </figure>
+  <figure>
+    <a href="{{ '/assets/schriftrollen/regulaeres-saatgut/22-pollen-trocknen.jpg' | relative_url }}"><img src="{{ '/assets/schriftrollen/regulaeres-saatgut/22-pollen-trocknen.jpg' | relative_url }}" alt="Geernteter Pollen trocknet zwischen Silikagel-Päckchen" loading="lazy"></a>
+    <figcaption>Der geerntete Pollen trocknet zwischen Silikagel-Päckchen, bevor er eingefroren wird.</figcaption>
+  </figure>
 </div>
 
 ## Blüte, Hitzewelle und der EC-Reset {#bluete}
@@ -214,6 +218,17 @@ Und ganz ehrlich: Ich bin trotzdem froh über den Unfall. Dadurch habe ich drei 
 
 Zum Ende hin habe ich nur noch gespült. Einen Tag konnte ich nicht gießen, und bei der Topfgröße ist das fatal: Die Sonnensegel ließen sich schon einfach abzupfen. Zum Glück hat sich die Pflanze wieder erholt. Gegen Ende der Blüte gab es nur noch Wasser, bis der Abfluss auf Leitungswasserniveau war. Dann kam die Ernte: zuerst die Skunk, kurz darauf die Hella Jelly.
 
+<div class="galerie">
+  <figure>
+    <a href="{{ '/assets/schriftrollen/regulaeres-saatgut/23-ernte-haengend.jpg' | relative_url }}"><img src="{{ '/assets/schriftrollen/regulaeres-saatgut/23-ernte-haengend.jpg' | relative_url }}" alt="Geerntete Pflanzen hängen zum Trocknen im Zelt" loading="lazy"></a>
+    <figcaption>Geerntet und zum Trocknen aufgehängt.</figcaption>
+  </figure>
+  <figure>
+    <a href="{{ '/assets/schriftrollen/regulaeres-saatgut/24-bluete-beim-trocknen.jpg' | relative_url }}"><img src="{{ '/assets/schriftrollen/regulaeres-saatgut/24-bluete-beim-trocknen.jpg' | relative_url }}" alt="Eine Blüte hängt zum Trocknen im Zelt" loading="lazy"></a>
+    <figcaption>Eine Blüte beim Trocknen im Zelt.</figcaption>
+  </figure>
+</div>
+
 Und jetzt kommt die wichtigste Erkenntnis des ganzen Runs, und sie kam erst ganz spät. Ich hatte die Pflanzen zu Beginn der Blüte umgetopft, als das Wurzelwachstum eigentlich schon abgeschlossen war. Die Wurzeln sind deshalb im alten Ballen von 1,55 Litern geblieben. Gegen Ende musste ich immer abwechselnd einmal mit EC gießen und einmal nur spülen, und irgendwann bin ich darauf gekommen, warum: Als ich in die Töpfe geschaut habe, war drei Viertel des Topfes nur ganz leicht durchwurzelt, ohne richtige Struktur. Ich habe aber immer Wasser für 4 Liter Topfvolumen gegeben. Im kleinen Wurzelballen hat sich das Ganze ständig versalzen, und ich musste jedes zweite Mal spülen.
 
 <p class="merksatz">Umtopfen so früh wie möglich!!!</p>
@@ -224,6 +239,13 @@ Und jetzt kommt die wichtigste Erkenntnis des ganzen Runs, und sie kam erst ganz
 </div>
 
 Die Pflanze mit den eigenen Samen hat noch etwas länger gebraucht. Sie durfte die Samen in Ruhe reifen lassen, bis zum letzten Gießvorgang. Und dann kam das Beste: Pulen, Pulen, Pulen :D Die Samen aus dem Sieb ins Glas, und fertig waren meine ersten eigenen Samen. Die Fotos dazu gibt es im Fall [Die eigenen Seeds]({{ '/funde/2026-08-02-die-eigenen-seeds/' | relative_url }}).
+
+<div class="galerie galerie-breit">
+  <figure>
+    <a href="{{ '/assets/schriftrollen/regulaeres-saatgut/25-ergebnis-glaeser.jpg' | relative_url }}"><img src="{{ '/assets/schriftrollen/regulaeres-saatgut/25-ergebnis-glaeser.jpg' | relative_url }}" alt="Vier Gläser mit den Kreuzungen und der Sour Silverback F2" loading="lazy"></a>
+    <figcaption>Das Ergebnis: die Gläser mit den drei Kreuzungen und der Sour Silverback F2.</figcaption>
+  </figure>
+</div>
 
 ## Mein Fazit zu regulärem Saatgut {#fazit}
 
