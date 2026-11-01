@@ -31,3 +31,10 @@ exclude:
   - README.md
   - scripts
   - Quelle_Infos_Fotos
+
+# Vorschaubild beim Teilen (Reddit, Messenger ...) fuer alle Seiten
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og.jpg
