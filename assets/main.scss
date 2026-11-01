@@ -507,6 +507,15 @@ button.knopf { cursor: pointer; font-size: .8rem; }
 .schrift-karte h3 { margin: .45em 0 .35em; font-size: 1.15rem; line-height: 1.3; }
 .schrift-karte p { margin: 0; color: $muted; font-style: italic; }
 
+// ---- Schriftrollen: Technik-Kaesten, Merksatz ------------------------------------------------------------
+.technik-kasten { max-width: 46rem; margin: 1.6rem 0; padding: 1rem 1.3rem; border: 1px solid $gold-dim; border-left: 3px solid $potion; border-radius: 3px; background: rgba($panel, .85); }
+.technik-kasten h3 { margin: 0 0 .5rem; font-size: 1rem; color: $gold; }
+.technik-kasten p { margin: 0; }
+.technik-kasten ol { margin: 0 0 0 1.3rem; padding: 0; }
+.technik-kasten li { margin: .25rem 0; }
+.merksatz { max-width: 46rem; margin: 1.4rem 0; padding: .8rem 1.2rem; font-family: $f-head; font-size: 1.25rem; letter-spacing: .03em; color: $gold; text-align: center; border-top: 1px solid $gold-dim; border-bottom: 1px solid $gold-dim; text-shadow: 0 0 18px rgba($gold, .3); }
+.rolle .galerie { max-width: 100%; }
+.rolle > .kapitel-nav { max-width: 46rem; margin: 0 0 1.4rem; }
 .stammvergleich { margin: 1.2rem 0 2.6rem; }
 .sv-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-bottom: 1rem; }
 .sv-marken { display: inline-flex; align-items: center; gap: .45em; margin: 0; font-size: .92rem; color: $muted; cursor: pointer; }
