@@ -53,7 +53,7 @@
   var PANELS = [
     { id: 'temp',     gruppe: 'klima',      label: 'Temperatur',  einheit: '°C',  legende: [['Tag', 'tag'], ['Nacht', 'nacht']] },
     { id: 'rlf',      gruppe: 'klima',      label: 'Luftfeuchte', einheit: '%',   legende: [] },
-    { id: 'vpd',      gruppe: 'klima',      label: 'VPD',         einheit: 'kPa', legende: [] },
+    { id: 'vpd',      gruppe: 'klima',      label: 'VPD*',        einheit: 'kPa', legende: [], fussnote: '* Die Windgeschwindigkeit auf der Blattoberfläche ist bei der Berechnung nicht berücksichtigt.' },
     { id: 'ec',       gruppe: 'giessen',    label: 'EC',          einheit: '',    legende: 'stil' },
     { id: 'menge',    gruppe: 'giessen',    label: 'Menge',       einheit: 'ml',  legende: 'stil' },
     { id: 'zusatz',   gruppe: 'zusaetze',   label: 'Zusätze',     einheit: 'ml',  legende: [] },
@@ -202,7 +202,9 @@
       }
       var kopf = el('div', { 'class': 'panel-kopf' }, [el('h3', { text: p.label + (p.einheit ? ' (' + p.einheit + ')' : '') }), legende]);
       var wrap = el('div', { 'class': 'panel-chart' }, [el('canvas')]);
-      var box = el('section', { 'class': 'grow-panel' }, [kopf, wrap]);
+      var teile = [kopf, wrap];
+      if (p.fussnote) teile.push(el('p', { 'class': 'panel-fussnote', text: p.fussnote }));
+      var box = el('section', { 'class': 'grow-panel' }, teile);
       root.appendChild(box);
       ui.panels[p.id] = { box: box, wrap: wrap, def: p };
     });
