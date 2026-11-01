@@ -9,10 +9,10 @@ permalink: /labor/
 Seit geraumer Zeit widme ich mich der Kunst und Wissenschaft der
 Indoor-Kultivierung. Was einst mit einfachen Autoflowering-Samen und günstigen
 Bulk-Breedern als erstes Herantasten begann, hat sich längst zu einer
-tiefgehenden Faszination für saubere Genetik, Terpenprofile und empirische
+tiefgehenden Faszination für saubere Genetik, Terpenprofile und
 Prozessoptimierung entwickelt.
 
-Heute kommt mir kein namenloses White-Label-Saatgut mehr in die Erde. Mein
+Heute vermeide ich Whitelabel-Seeds. Mein
 Fokus liegt auf echter Züchtungsarbeit, nachvollziehbaren Stammbäumen und
 renommierten Breedern wie Karma Genetics, Serious Seeds, Humboldt Seed Company
 oder Ripper Seeds. Ich suche gezielt nach Klassikern und stabilen Linien im
@@ -20,7 +20,7 @@ feminisierten und regulären Spektrum – mit einer besonderen Schwäche für
 klassische OG-Kush-Linien, die originale GG#4 (Josey Wales Cut) und schwere
 Profile aus Kiefer, Gas, Diesel und Zitrone.
 
-Im Labor verlasse ich mich nicht auf blindes Bauchgefühl, sondern auf harte
+Im Labor verlasse ich mich nicht auf blindes Bauchgefühl, sondern auf
 Daten. Vom präzisen Tracking der Input- und Drain-Werte (EC und pH) bis hin zur
 Auswertung in meinem eigenen Analyse-Tool Canalyze: Jeder Durchgang, jeder
 Phänotyp und auch jeder Messfehler an der Pipette wird dokumentiert, um die

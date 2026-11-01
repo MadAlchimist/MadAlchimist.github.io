@@ -17,7 +17,11 @@ gabs beim nächsten Gießen noch mal Lösung mit EC 1 (Zombie) bzw. 1,4 (Skywalk
 Danach hab ich einmal auf gesunden EC geflusht. Seitdem habe ich einen sehr gesunden und aktiven Stoffwechsel bei allen Pflanzen.
 Alle haben sich wunderbar erholt und sehen super aus.
 
-Die genaue Dokumentation von EC und pH in der Lösung und im Drain hat es mir erheblich leichter gemacht, auf den drohenden Lockout zu reagieren.
+Die Skywalker OG/Kush zeigt verbrannte Spitzen an einigen Blättern. Daher habe ich beschlossen, den EC-Input hier auf das Niveau der Zombie-Kush (1,6) zu senken.
+
+Die genaue Dokumentation von EC und pH in der Lösung und im Drain hat es mir erheblich leichter gemacht, auf den drohenden Lockout und die Ursache für die verbrannten Spitzen zu reagieren.
+
+Weiter habe ich beim letzten Gießen mit dem PK13/14 Boost begonnen (1mL/L)
 
 **Tipp:** Schalte in der Ansicht unten die Ebene **EC** ein. Dann siehst du die Spitze im Drain Ende September und wie sie nach dem Spülen wieder sinkt.
 
