@@ -553,6 +553,19 @@ button.knopf { cursor: pointer; font-size: .8rem; }
 .marke.unb { color: $arcane-lt; border: 1px dashed rgba($arcane, .85); background: rgba($arcane, .1); }
 .stammvergleich.marken-aus .baum .marke { display: none; }
 
+// ---- Aktueller Grow: Logbuch mit einklappbaren, datierten Eintraegen ------------------------------------
+.logbuch-leiste { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; }
+details.eintrag { margin: 0 0 .8rem; border: 1px solid $gold-dim; border-left: 3px solid $arcane; border-radius: 3px; background: rgba($panel, .85); }
+details.eintrag > summary { cursor: pointer; list-style: none; padding: .75rem 1.1rem; font-family: $f-head; font-size: 1rem; letter-spacing: .02em; color: $gold; }
+details.eintrag > summary::-webkit-details-marker { display: none; }
+details.eintrag > summary::before { content: "▸"; display: inline-block; width: 1.1em; color: $arcane-lt; transition: transform .2s; }
+details.eintrag[open] > summary::before { transform: rotate(90deg); }
+details.eintrag > summary:hover { background: rgba($arcane, .1); }
+details.eintrag > summary:focus-visible { outline: 1px solid $arcane; }
+details.eintrag .datum { margin-right: .7em; padding: .05em .6em; font-size: .72rem; letter-spacing: .1em; color: $arcane-lt; border: 1px solid rgba($arcane, .6); border-radius: 2em; white-space: nowrap; }
+details.eintrag[open] > summary { border-bottom: 1px solid rgba($gold, .2); }
+details.eintrag > p { margin: .9rem 1.2rem; }
+
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }
 .quellen .meta { color: $muted; font-family: $f-note; font-style: italic; }
