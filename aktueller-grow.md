@@ -17,6 +17,19 @@ und der Zeitraum eingrenzen.
 </div>
 
 <details class="eintrag" open markdown="1">
+<summary><span class="datum">20.11.2026</span> Letzte Fütterung: ab jetzt wird gespült</summary>
+
+Bei der K-MintZ hatte ich in den letzten Tagen Bedenken wegen des EC. Nach der langen Pause am 10.11. lag der Drain-EC dort bei 1,9 und bei der Skywalker bei 1,7, bei einem Input von 1,5. Ab dem 12.11. bin ich deshalb mit dem Input auf 1,3 heruntergegangen und habe den Abstand verkürzt. Ab dem 15.11. habe ich zusätzlich die Terra Flores von 2,5 auf 2,0 ml/L reduziert.
+
+Dabei hat sich gezeigt, wie stark der EC im Drain vom Dryback abhängt. Der erhöhte Dryback führt bei allen Pflanzen zur sofortigen Steigerung des EC, bei der K-MintZ sogar ganz erheblich. Sie lag seit dem 12.11. immer zwischen 1,4 und 1,8 und damit klar über dem Input. Nach der längeren Pause am 18.11. ist der Wert wieder auf 1,6 gestiegen. Zombie Kush und Skywalker blieben mit 1,1 bis 1,4 viel näher am Input. 3-4 Tage ohne Gießen sind also schon zu lang. Ich reduziere den Rhythmus deshalb auf Gießen alle 2-3 Tage.
+
+Heute (20.11.) sind alle EC-Werte im Drain wieder im absoluten Soll: K-MintZ 1,4, Zombie Kush 1,1 und Skywalker 1,2, bei einem Input von 1,2. Das Klima war in den letzten Tagen dabei sehr ruhig: tagsüber 23,5 bis 25 °C, nachts 16,5 bis 18,5 °C, rund 62 % Luftfeuchte und ein VPD zwischen 1,07 und 1,22 kPa.
+
+Außerdem habe ich heute das letzte Mal gefüttert. Ab jetzt wird gespült. Wir gehen also ins Finale!
+
+</details>
+
+<details class="eintrag" markdown="1">
 <summary><span class="datum">10.11.2026</span> Aktueller Stand</summary>
 
 Der PK13/14 Boost ist durch. Insgesamt habe ich 3x PK hinzugegeben. Der Boden ist gut gesättigt und die Pflanzen harzen regelrecht zu. Die Skywalker-Kush legt eine bemerkenswerte Öligkeit an den Tag.
