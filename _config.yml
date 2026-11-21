@@ -11,6 +11,7 @@ header_pages:
   - funde.md
   - bibliothek.md
   - schriftrollen.md
+  - saeulen.md
   - labor.md
   - canalyze.md
   - aktueller-grow.md
@@ -20,6 +21,9 @@ collections:
   schriftrollen:
     output: true
     permalink: /schriftrollen/:name/
+  saeulen:
+    output: true
+    permalink: /saeulen/:name/
   lernkurve:
     output: true
     permalink: /funde/:name/

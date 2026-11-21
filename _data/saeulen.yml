@@ -1,0 +1,19 @@
+# Stufen der "Säulen der Zucht" (Reihenfolge = Reihenfolge auf der Übersichtsseite).
+# nr wird in den Säulen-Dateien unter _saeulen/ als "stufe:" verwendet.
+stufen:
+  - nr: 1
+    roemisch: I
+    titel: Ur-Fundamente
+    text: Die frühen Linien, auf denen später fast alles aufbaut.
+  - nr: 2
+    roemisch: II
+    titel: Indoor- & Farb-Klassiker
+    text: Sorten, die den Indoor-Anbau und die Vielfalt bei Farbe und Aroma geprägt haben.
+  - nr: 3
+    roemisch: III
+    titel: US-Terpen-Anker
+    text: Die US-Klone, deren Terpenprofile bis heute in modernen Sorten stecken.
+  - nr: 4
+    roemisch: IV
+    titel: Moderne Multiplikatoren
+    text: Sorten, auf denen heute ganze Familien aufbauen.

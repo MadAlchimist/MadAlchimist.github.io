@@ -166,14 +166,10 @@ ul { list-style: none; margin-left: 0; }
 .zierlinie .blatt { width: 52px; height: auto; color: $gold; filter: drop-shadow(0 0 6px rgba($potion, .45)); }
 
 .tafeln { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.1rem; margin: 1rem 0 2.5rem; }
-// Startseite: drei Kacheln oben, zwei darunter (gleich breit pro Reihe)
-.tafeln.start { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.tafeln.start .tafel { grid-column: span 2; }
-.tafeln.start .tafel:nth-child(n+4) { grid-column: span 3; }
+// Startseite: sechs Kacheln, drei pro Reihe (am Handy zwei pro Reihe)
+.tafeln.start { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media screen and (max-width: 640px) {
   .tafeln.start { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tafeln.start .tafel, .tafeln.start .tafel:nth-child(n+4) { grid-column: span 1; }
-  .tafeln.start .tafel:last-child { grid-column: 1 / -1; }
   .tafeln.start .tafel strong { font-size: .9rem; letter-spacing: .05em; }   // 'Schriftrollen' passt sonst knapp nicht in die Kachel
 }
 .tafel {
@@ -495,10 +491,10 @@ button.knopf { cursor: pointer; font-size: .8rem; }
 @media screen and (max-width: 600px) { .rolle { padding: 1.8rem 1.1rem 1.6rem; } }
 
 .schrift-liste { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
-.post-content .schrift-liste > li, .schrift-liste > li { padding-left: 0; }
-.post-content .schrift-liste > li::before, .schrift-liste > li::before { content: none; }
+.post-content ul.schrift-liste:not(.karten) > li { padding-left: 0; }   // sticht die allgemeine Listenregel (Einzug + Stern)
+.post-content ul.schrift-liste:not(.karten) > li::before { content: none; }
 .schrift-karte a {
-  position: relative; display: block; height: 100%; padding: 1.5rem 1.3rem 1.3rem; color: $parchment; border: 1px solid $gold-dim; border-radius: 4px;
+  position: relative; display: block; box-sizing: border-box; height: 100%; padding: 1.5rem 1.3rem 1.3rem; color: $parchment; border: 1px solid $gold-dim; border-radius: 4px;
   background: linear-gradient(180deg, rgba(233, 220, 192, .07), rgba($panel, .95)); transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 .schrift-karte a::before { content: ""; position: absolute; left: 12px; right: 12px; top: -6px; height: 9px; border-radius: 5px; background: linear-gradient(180deg, #8d7336, $gold 50%, #6b5624); }
@@ -569,6 +565,67 @@ details.eintrag > p { margin: .9rem 1.2rem; }
 .quellen { list-style: none; margin: 1rem 0 2rem; padding: 0; }
 .quellen li { padding: .8rem 1rem; margin-bottom: .7rem; border-left: 2px solid $arcane; background: rgba($panel, .7); }
 .quellen .meta { color: $muted; font-family: $f-note; font-style: italic; }
+
+// ---- Saeulen der Zucht ------------------------------------------------------------------------------------
+.stufe { margin: 2.2rem 0 2.6rem; }
+.stufe-kopf { display: flex; align-items: center; gap: .7em; margin: 0 0 .15em; }
+.stufe-kopf .roemisch {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 2.4em; height: 2.4em; padding: 0 .3em; flex: none;
+  font-family: $f-display; font-size: .85rem; line-height: 1; color: $gold; border: 1px solid $gold-dim; border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, rgba($gold, .22), rgba($panel, .95)); box-shadow: 0 0 14px rgba($gold, .18);
+}
+.stufe-text { margin: 0; color: $muted; font-style: italic; }
+
+.saeulen-liste { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.3rem 1.1rem; }
+@media screen and (max-width: 820px) { .saeulen-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media screen and (max-width: 380px) { .saeulen-liste { grid-template-columns: 1fr; } }
+.post-content ul.saeulen-liste:not(.karten) > li { padding-left: 0; margin: 0; }   // sticht die allgemeine Listenregel (Einzug + Stern)
+.post-content ul.saeulen-liste:not(.karten) > li::before { content: none; }
+.saeule-karte a {
+  position: relative; display: block; box-sizing: border-box; height: 100%; padding: 1.7rem .9rem 1.6rem; text-align: center; color: $parchment;
+  border: 1px solid $gold-dim; border-top: 0; border-bottom: 0;
+  // feine senkrechte Rillen wie bei einer Saeule
+  background:
+    repeating-linear-gradient(90deg, rgba($parchment, .05) 0 2px, transparent 2px 13px),
+    linear-gradient(180deg, rgba(233, 220, 192, .07), rgba($panel, .96));
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.saeule-karte a::before, .saeule-karte a::after {
+  content: ""; position: absolute; left: -6px; right: -6px; height: 12px; border-radius: 3px;
+  background: linear-gradient(180deg, #8d7336, $gold 45%, #6b5624); box-shadow: 0 4px 10px rgba(0, 0, 0, .5);
+}
+.saeule-karte a::before { top: -6px; }
+.saeule-karte a::after { bottom: -6px; }
+.saeule-karte a:hover { transform: translateY(-3px); border-color: $arcane; box-shadow: 0 10px 30px rgba(0, 0, 0, .55), 0 0 26px rgba($arcane, .25); color: $parchment; text-shadow: none; }
+.saeule-nr { display: block; font-family: $f-head; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: $arcane-lt; }
+.saeule-karte h3 { margin: .45em 0 .15em; font-size: 1.1rem; line-height: 1.3; color: $parchment; }
+.saeule-karte a:hover h3 { color: $arcane-lt; }
+.saeule-zusatz { display: block; margin-bottom: .2em; font-family: $f-note; font-style: italic; font-size: .95rem; color: $gold; }
+.saeule-karte p { margin: .5em 0 0; font-size: .88rem; line-height: 1.35; font-style: italic; color: $muted; }
+
+.steckbrief {
+  position: relative; margin: 1.6rem 0 2rem; padding: 1.5rem 1.5rem 1.2rem; border: 1px solid $gold-dim; border-radius: 4px;
+  background: rgba($panel, .9); box-shadow: inset 0 0 40px rgba(0, 0, 0, .35);
+}
+.steckbrief-nr { position: absolute; top: -.8em; left: 1.2rem; padding: 0 .7em; font-family: $f-head; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: $arcane-lt; background: $ink; }
+.steckbrief dl { margin: 0; display: grid; gap: 1rem; }
+.steckbrief dt { margin-bottom: .25rem; font-family: $f-head; font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: $gold; }
+.steckbrief dd { margin: 0; }
+.fkt-liste { display: flex; flex-wrap: wrap; gap: .35rem; }
+.chip.fkt { color: $arcane-lt; border-color: rgba($arcane, .65); background: rgba($arcane, .1); }
+// Einordnung einer Saeule (optionales Feld "einstufung: legende | geschichte" in _saeulen/*.md)
+.chip.einstufung { font-family: $f-head; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.chip.einstufung.legende { color: lighten($skurril, 12%); border-color: rgba($skurril, .7); background: rgba($skurril, .1); }
+.chip.einstufung.geschichte { color: #c4efa7; border-color: rgba($potion, .75); background: rgba($potion, .1); }
+.saeule-karte .chip.einstufung { margin-top: .8em; }
+@media screen and (min-width: 760px) {
+  .steckbrief dl > div { display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: 1rem; align-items: baseline; }
+  .steckbrief dt { margin-bottom: 0; }
+}
+.folgt { margin: 1.5rem 0; padding: 1rem 1.3rem; text-align: center; font-style: italic; color: $muted; border: 1px dashed $gold-dim; border-radius: 3px; }
+.praxis-titel { margin-top: 2.4rem; }
+.saeulen-nav { display: flex; justify-content: space-between; gap: 1rem; margin: 2.4rem 0 0; font-family: $f-head; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.saeulen-nav .nach { margin-left: auto; text-align: right; }
 
 html { scrollbar-gutter: stable; }   // Scrollbalken-Platz immer reservieren, damit die Seite nie seitlich springt
 

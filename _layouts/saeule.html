@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include blatt-symbole.html -%}
+
+    {%- include header.html -%}
+
+    {%- assign alle = site.saeulen | sort: "nr" -%}
+    {%- assign stufe = site.data.saeulen.stufen | where: "nr", page.stufe | first -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper wrapper-breit">
+        <nav class="brotkrumen" aria-label="Pfad"><a href="{{ '/saeulen/' | relative_url }}">Säulen der Zucht</a> <span>›</span> {{ page.title }}</nav>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="untertitel">{% if page.untertitel %}{{ page.untertitel }} · {% endif %}Stufe {{ stufe.roemisch }}: {{ stufe.titel }}</p>
+
+        <section class="steckbrief" aria-label="Steckbrief">
+          <span class="steckbrief-nr">Säule {{ page.nr }} von {{ alle.size }}</span>
+          <dl>
+            <div><dt>Genetischer Status</dt><dd>{{ page.status }}</dd></div>
+            <div>
+              <dt>Primäre Zuchtfunktion</dt>
+              <dd class="fkt-liste">{%- for f in page.funktionen -%}<span class="chip fkt">{{ f }}</span>{%- endfor -%}</dd>
+            </div>
+            {%- if page.einstufung == "legende" -%}
+            <div><dt>Einordnung</dt><dd><span class="chip einstufung legende">Myth or Legend</span></dd></div>
+            {%- elsif page.einstufung == "geschichte" -%}
+            <div><dt>Einordnung</dt><dd><span class="chip einstufung geschichte">True History</span></dd></div>
+            {%- endif -%}
+          </dl>
+        </section>
+
+        {%- assign inhalt = content | strip -%}
+        {%- if inhalt != "" -%}
+        <article class="rolle post-content">
+          {{ content }}
+        </article>
+        {%- else -%}
+        <p class="folgt">Der ausführliche Beitrag zu dieser Säule folgt.</p>
+        {%- endif -%}
+
+        {%- if page.funde -%}
+        <h2 class="praxis-titel">Aus meiner Praxis</h2>
+        <ul class="karten">
+          {%- for slug in page.funde -%}
+            {%- assign fall = site.lernkurve | where_exp: "f", "f.url contains slug" | first -%}
+            {%- if fall -%}{% include fall-karte.html fall=fall %}{%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+
+        {%- for s in alle -%}{%- if s.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+        {%- assign vor = idx | minus: 1 -%}
+        {%- assign nach = idx | plus: 1 -%}
+        {%- assign zurueck_s = alle[vor] -%}
+        {%- assign weiter_s = alle[nach] -%}
+        <nav class="saeulen-nav" aria-label="Weitere Säulen">
+          {%- if idx > 0 -%}<a class="vor" href="{{ zurueck_s.url | relative_url }}">← {{ zurueck_s.title }}</a>{%- else -%}<span></span>{%- endif -%}
+          {%- if weiter_s -%}<a class="nach" href="{{ weiter_s.url | relative_url }}">{{ weiter_s.title }} →</a>{%- endif -%}
+        </nav>
+
+        <p class="zurueck"><a href="{{ '/saeulen/' | relative_url }}">← Alle Säulen der Zucht</a></p>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script src="{{ '/assets/js/heim-fx.js' | relative_url }}"></script>
+
+  </body>
+
+</html>

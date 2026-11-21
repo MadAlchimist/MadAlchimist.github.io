@@ -1,4 +1,4 @@
-{%- comment -%} Kleine Laborglaeser fuer das Menue (form 1-6). Gleiche Gestalt wie der Kolben im Logo: Gold-Kontur, Fluessigkeit unten. {%- endcomment -%}
+{%- comment -%} Kleine Laborglaeser fuer das Menue (form 1-7). Gleiche Gestalt wie der Kolben im Logo: Gold-Kontur, Fluessigkeit unten. {%- endcomment -%}
 {%- assign f = include.form | default: 1 -%}
 <svg class="glas" viewBox="0 0 24 30" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
   {%- if f == 1 -%}
@@ -21,6 +21,10 @@
   <clipPath id="glas-5"><path d="M8.5 3v19h7V3Z"/></clipPath>
   <rect x="0" y="10" width="24" height="20" fill="#a06cff" clip-path="url(#glas-5)"/>
   <path d="M7 3h10M8.5 3v19h7V3M5 26h14M12 22v4" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  {%- elsif f == 7 -%}
+  <clipPath id="glas-7"><path d="M10 3v4l-2.5 3v13a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V10L14 7V3Z"/></clipPath>
+  <rect x="0" y="15" width="24" height="16" fill="#7ccf4f" clip-path="url(#glas-7)"/>
+  <path d="M9 3h6M10 3v4l-2.5 3v13a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V10L14 7V3" fill="none" stroke="#c9a24b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
   {%- else -%}
   <clipPath id="glas-6"><path d="M10.5 3v5.5c-3 1.5-5 4.7-5 8.2 0 4 2.7 7.3 6.5 7.3s6.5-3.3 6.5-7.3c0-3.5-2-6.7-5-8.2V3Z"/></clipPath>
   <rect x="0" y="16" width="24" height="14" fill="#e8c46a" clip-path="url(#glas-6)"/>

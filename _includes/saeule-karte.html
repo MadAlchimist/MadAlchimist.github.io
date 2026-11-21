@@ -1,0 +1,9 @@
+<li class="saeule-karte">
+  <a href="{{ include.saeule.url | relative_url }}">
+    <span class="saeule-nr">Säule {{ include.saeule.nr }}</span>
+    <h3>{{ include.saeule.title }}</h3>
+    {%- if include.saeule.untertitel %}<span class="saeule-zusatz">{{ include.saeule.untertitel }}</span>{% endif %}
+    <p>{{ include.saeule.status }}</p>
+    {%- if include.saeule.einstufung == "legende" %}<span class="chip einstufung legende">Myth or Legend</span>{% elsif include.saeule.einstufung == "geschichte" %}<span class="chip einstufung geschichte">True History</span>{% endif %}
+  </a>
+</li>
