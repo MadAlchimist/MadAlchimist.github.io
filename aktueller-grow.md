@@ -17,6 +17,18 @@ und der Zeitraum eingrenzen.
 </div>
 
 <details class="eintrag" open markdown="1">
+<summary><span class="datum">24.11.2026</span> Jetzt wird gespült</summary>
+
+Ich habe nun das Spülen begonnen. Ich hatte nun doch, wegen der hohen Feuchtigkeit im Topf, eine längere Trockenphase bei allen vor dem ersten Flush eingelegt. 
+Ich habe dann begonnen mit 3000ml zu spülen. Der EC liegt hier bei 0,36. Alle Pflanzen waren nach dem ersten Flush nun direkt unter 1,0 beim EC im Drain. 
+Von nun an werden die Pflanzen mit minimalem Drain von 200-300ml im Zelt gegossen. So muss ich die Pflanzen nicht mehr bewegen und der EC im Drain schließt eine Versalzung bereits aus. 
+Ich werde auch die 200-300ml Drain nicht absaugen/weggießen.
+
+FINALE :D Ich bin so gespannt auf die Ernte
+
+</details>
+
+<details class="eintrag" markdown="1">
 <summary><span class="datum">20.11.2026</span> Letzte Fütterung: ab jetzt wird gespült</summary>
 
 Bei der K-MintZ hatte ich in den letzten Tagen Bedenken wegen des EC. Nach der langen Pause am 10.11. lag der Drain-EC dort bei 1,9 und bei der Skywalker bei 1,7, bei einem Input von 1,5. Ab dem 12.11. bin ich deshalb mit dem Input auf 1,3 heruntergegangen und habe den Abstand verkürzt. Ab dem 15.11. habe ich zusätzlich die Terra Flores von 2,5 auf 2,0 ml/L reduziert.
